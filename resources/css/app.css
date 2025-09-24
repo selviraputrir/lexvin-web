@@ -1,0 +1,31 @@
+/* resources/css/app.css */
+@import "tailwindcss";
+@font-face {
+    font-family: 'Vogue';
+    src: url('../fonts/Vogue.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+.bg-wine-red{
+    background-color: #451425;
+}
+.bg-ivory-white{
+    background-color:  #FDFDFB;
+}
+.text-gold-accent{
+    color:#B89B65;
+}
+.font-sans{
+    font-style: 'sans-serif';
+    font-style: 'inter';
+    
+}
+.bg-navy-dark{
+   background-color: #0D1B2A;
+}
+
+
