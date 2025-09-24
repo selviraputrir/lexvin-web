@@ -2,7 +2,7 @@
     style="background-image: url('{{ asset('images/background-hero.jpg') }}')">
     <header class="sticky top-0 z-50 shadow-md flex items-center">
         <div class="container mx-auto">
-            <div class="bg-black px-6 py-8 [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]">
+            <div class="bg-black px-6 py-8 [clip-path:polygon(0_0,100%_0,95%_100%,5%_100%)]">
                 
                 <div class="flex items-center justify-between">
                     <a href="/">
