@@ -6,11 +6,12 @@
       text-align: center;
       margin: 20px 0 20px;
       font-size: 40px;
-      font-weight: bold; 
+      font-weight: bold;
+      color: rgb(255, 255, 255); 
       opacity: 0;
       transform: translateY(30px);
       animation: fadeSlide 1s ease-out forwards;
-      border-bottom: 3px solid white; 
+      border-bottom: 3px solid rgb(255, 255, 255); 
       padding-bottom: 5px; 
       width: 50%; 
       margin-left: auto; 
