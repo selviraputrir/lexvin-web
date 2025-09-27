@@ -27,5 +27,8 @@
 .bg-navy-dark{
    background-color: #0D1B2A;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 
