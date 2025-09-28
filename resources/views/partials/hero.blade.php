@@ -17,8 +17,8 @@
                     <nav class="hidden items-center space-x-12 text-sm md:flex">
                         <a href="#home" class="text-white transition-colors duration-300 hover:text-wine-red">Home</a>
                         <a href="#about" class="text-white transition-colors duration-300 hover:text-wine-red">About</a>
-                        <a href="#" class="text-white transition-colors duration-300 hover:text-wine-red">Legal Services</a>
-                        <a href="#" class="text-white transition-colors duration-300 hover:text-wine-red">Our Clients</a>
+                        <a href="#legal services" class="text-white transition-colors duration-300 hover:text-wine-red">Legal Services</a>
+                        <a href="#our clients" class="text-white transition-colors duration-300 hover:text-wine-red">Our Clients</a>
                     </nav>
                 </div>
                 <a href="{{ $whatsappLink }}" target="_blank" class="hidden rounded-xl bg-wine-red px-6 py-2 text-sm font-bold text-white transition-opacity hover:opacity-90 md:block">
