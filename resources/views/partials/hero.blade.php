@@ -2,29 +2,31 @@
 
     <section id="home" class="relative container mx-auto" style="height: 80vh;">
 
-        <div class="absolute inset-0 bg-center bg-no-repeat bg-cover rounded-xl" 
-             style="background-image: url('{{ asset('images/background-hero.jpg') }}');">
-             <div class="absolute inset-0 bg-black/50 rounded-xl"></div>
+        <div class="absolute inset-0 bg-center bg-no-repeat bg-cover rounded-xl"
+            style="background-image: url('{{ asset('images/background-hero.jpg') }}');">
+            <div class="absolute inset-0 bg-black/50 rounded-xl"></div>
         </div>
 
         <div class="relative z-10 flex flex-col h-full">
-            
+
             <header class="flex items-center ">
-                <div class="bg-black py-4 px-35 [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)] flex items-center gap-12">
+                <div
+                    class="bg-black py-4 px-35 [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)] flex items-center gap-12">
                     <a href="/">
                         <img src="{{ asset('images/logo.png') }}" alt="LEXVIN" class="h-6 w-auto">
                     </a>
                     <nav class="hidden items-center space-x-12 text-sm md:flex">
-                        <a href="#home" class="text-white transition-colors duration-300 hover:text-wine-red">Home</a>
-                        <a href="#about" class="text-white transition-colors duration-300 hover:text-wine-red">About</a>
-                        <a href="#legal services" class="text-white transition-colors duration-300 hover:text-wine-red">Our Services</a>
-                        <a href="#our clients" class="text-white transition-colors duration-300 hover:text-wine-red">Our Clients</a>
+                        <a href="#home" class="nav-link">Home</a>
+                        <a href="#about" class="nav-link">About</a>
+                        <a href="#our services" class="nav-link">Our Services</a>
+                        <a href="#our clients" class="nav-link">Our Clients</a>
                     </nav>
                 </div>
-                <a href="{{ $whatsappLink }}" target="_blank" class="hidden rounded-xl bg-wine-red px-6 py-2 text-sm font-bold text-white transition-opacity hover:opacity-90 md:block">
+                <a href="{{ $whatsappLink }}" target="_blank"
+                    class="hidden rounded-xl bg-wine-red px-6 py-2 text-sm font-bold text-white transition-opacity hover:opacity-90 md:block">
                     Contact Us
                 </a>
-                </header>
+            </header>
 
             <div class="flex-grow flex items-center justify-center text-center">
                 <h1 class="font-serif text-2xl font-bold leading-tight text-white drop-shadow-lg md:text-5xl">
@@ -33,10 +35,11 @@
             </div>
 
         </div>
-        
+
         <div class="absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full px-4">
             <div class="mx-auto bg-wine-red py-6 border border-white max-w-4xl">
-                <div class="grid grid-cols-1 divide-y divide-white/20 text-center text-white md:grid-cols-3 md:divide-x md:divide-y-0">
+                <div
+                    class="grid grid-cols-1 divide-y divide-white/20 text-center text-white md:grid-cols-3 md:divide-x md:divide-y-0">
                     <div class="py-8 md:py-0">
                         <p class="text-4xl font-bold">2000+</p>
                         <p class="mt-1 text-base text-gray-200">Cases Handled</p>
@@ -52,10 +55,10 @@
                 </div>
             </div>
         </div>
-        
+
     </section>
-    
+
     <div class="pt-48">
-        </div>
+    </div>
 
 </div>
