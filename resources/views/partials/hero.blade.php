@@ -17,7 +17,7 @@
                     <nav class="hidden items-center space-x-12 text-sm md:flex">
                         <a href="#home" class="text-white transition-colors duration-300 hover:text-wine-red">Home</a>
                         <a href="#about" class="text-white transition-colors duration-300 hover:text-wine-red">About</a>
-                        <a href="#legal services" class="text-white transition-colors duration-300 hover:text-wine-red">Legal Services</a>
+                        <a href="#legal services" class="text-white transition-colors duration-300 hover:text-wine-red">Our Services</a>
                         <a href="#our clients" class="text-white transition-colors duration-300 hover:text-wine-red">Our Clients</a>
                     </nav>
                 </div>
