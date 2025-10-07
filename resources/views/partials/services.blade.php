@@ -1,175 +1,173 @@
-<section id="our services" class="bg-black py-10">
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <style>
-  
-    .services-title{
-      text-align: center;
-      margin: 20px 0 20px;
-      font-size: 40px;
-      font-weight: bold;
-      color: rgb(255, 255, 255); 
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeSlide 1s ease-out forwards;
-      border-bottom: 3px solid rgb(255, 255, 255); 
-      padding-bottom: 5px; 
-      width: 50%; 
-      margin-left: auto; 
-      margin-right: auto; 
-    }
-    @keyframes fadeSlide {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    @keyframes growLine {
-      to {
-        transform: scaleX(1);
-      }
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(200px, 200px));
-      justify-content: center;
-      gap: 20px;
-    }
-    .card {
-      background: #5c2323;
-      padding: 20px 20px;
-      margin: 10px auto 0;
-      border-radius: 12px;
-      border: 2px solid #fff;
-      transition: all 0.4s ease-in-out;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-      display: flex;            
-      flex-direction: column;    
-      height: 100%;            
-    }
-    .card:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.7);
-      background: #7a2e2e;
-    }
-     .card i {
-      font-size: 50px;
-      margin-bottom: 15px; 
-      color: #ffffff;
-      transition: color 0.3s;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-    .card:hover i {
-      color: #894e4e;
-    }
+    <style>
+        :root {
+            --background-color: #000;
+            --card-gradient-start: #451425;
+            --card-gradient-end: #1a080f;
+            --primary-accent: #B89B65;
+            --text-primary: #ffffff;
+            --text-secondary: #d1d1d1;
+            --border-color: #555;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+        }
 
-    .card h3 {
-      font-size: 18px;
-      margin: 70px 0;
-      color: #ffffff
-    }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
 
-    .card p {
-      font-size: 15px;
-      color: #ffffff;
-      margin-bottom: 30px;
-    }
-    .card-buttons {
-      display: flex;            
-      justify-content: center;   
-      gap: 15px;                 
-      margin-top: auto;
-   }  
-   .card button {
-      position: relative;
-      overflow: hidden;
-      background: #fff;
-      color: #5c2323;
-      border: none;
-      padding: 10px 25px;
-      border-radius: 20px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      z-index: 1;
-  
-    }
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-color: var(--background-color);
+            font-family: var(--font-body);
+        }
+        
+        .services-title {
+            text-align: center;
+            margin: 40px auto;
+            font-size: 40px;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--primary-accent);
+            padding-bottom: 10px;
+            width: 50%;
+            max-width: 400px;
+            font-family: var(--font-heading); 
+        }
 
-    .card button::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: #895151;
-      transition: left 0.3s ease;
-      z-index: -1;
-    }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .card button:hover {
-      color: #000000;
-    }
+        /* Perubahan: Kartu kembali menjadi div, tambahkan cursor: pointer */
+        .card {
+            background: linear-gradient(135deg, var(--card-gradient-start), var(--card-gradient-end));
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            cursor: pointer; /* Memberi tanda bahwa area ini bisa diklik */
+        }
 
-    .card button:hover::before {
-      left: 0;
-    }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
+            border-color: var(--primary-accent);
+        }
+        
+        .card .icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: var(--primary-accent);
+            transition: color 0.3s, transform 0.3s;
+        }
+        
+        .card:hover .icon {
+            transform: scale(1.1);
+        }
 
-    @media (max-width: 900px) {
-      .services {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+        .card h3 {
+            font-size: 22px;
+            margin: 0 0 15px 0;
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+        }
 
-    @media (max-width: 600px) {
-      .services {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+        .card p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+        
+        /* Perubahan: Style untuk tombol yang sekarang adalah link <a> */
+        .card-button {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--text-primary);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-family: var(--font-body);
+            transition: all 0.3s ease;
+            text-align: center;
+            display: inline-block;
+            align-self: center;
+            text-decoration: none; /* Menghilangkan garis bawah link */
+        }
+
+        .card .card-button:hover {
+            background: var(--text-primary);
+            color: var(--card-gradient-start);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+    </style>
 </head>
 <body>
 
-  <h2 class="services-title"> Our Services </h2>
-  <div class="services">
+<section id="our-services">
+    <h2 class="services-title">Our Services</h2>
+    <div class="services">
+        
+        <div class="card" onclick="window.location.href='/halaman-konsultasi.html'">
+            <span class='bx bx-phone icon' aria-hidden="true"></span>
+            <h3>Legal Consultation</h3>
+            <p>Strategic consulting sessions to address both business and personal legal needs.</p>
+            <a href="https://wa.me/6281234567890?text=Halo, saya ingin bertanya tentang Legal Consultation." class="card-button" onclick="event.stopPropagation()">
+                Contact Us
+            </a>
+        </div>
 
-    <div class="card">
-         <i class='bx bx-phone'></i>
-      <h3>Legal Consultation</h3>
-      <p>Strategic consulting sessions to address both business 
-        and personal legal needs.</p>
-        <div class="card-buttons">
-      <button>Contact Us</button>
-    </div>
-    </div>
+        <div class="card" onclick="window.location.href='/halaman-retainer.html'">
+            <span class='bx bx-briefcase icon' aria-hidden="true"></span>
+            <h3>Corporate Legal Retainer</h3>
+            <p>Ongoing legal services for companies that need long-term legal partners.</p>
+            <a href="https://wa.me/6281234567890?text=Halo, saya ingin bertanya tentang Corporate Legal Retainer." class="card-button" onclick="event.stopPropagation()">
+                Contact Us
+            </a>
+        </div>
 
-    <div class="card">
-        <i class='bx bx-briefcase'></i>
-      <h3>Corporate Legal Retainer</h3>
-      <p>Ongoing legal services for companies that 
-        need long-term legal partners.</p>
-        <div class="card-buttons">
-      <button>Contact Us</button>
-    </div>
-    </div>
+        <div class="card" onclick="window.location.href='/halaman-corporate.html'">
+            <span class='bx bx-bulb icon' aria-hidden="true"></span>
+            <h3>Corporate Actions</h3>
+            <p>Assistance in mergers, acquisitions, consolidations, and business separations.</p>
+            <a href="https://wa.me/6281234567890?text=Halo, saya ingin bertanya tentang Corporate Actions." class="card-button" onclick="event.stopPropagation()">
+                Contact Us
+            </a>
+        </div>
 
-     <div class="card">
-         <i class='bx bx-bulb'></i>
-      <h3>Corporate Actions </h3>
-      <p>Assistance in mergers, acquisitions, 
-        consolidations, and business separations.</p>
-        <div class="card-buttons">
-      <button>Contact Us</button>
+        <div class="card" onclick="window.location.href='/halaman-litigasi.html'">
+            <span class='bx bx-group icon' aria-hidden="true"></span>
+            <h3>Litigation Support</h3>
+            <p>A team of litigation experts ready to defend and accompany clients in maintaining civil and criminal business cases.</p>
+            <a href="https://wa.me/6281234567890?text=Halo, saya ingin bertanya tentang Litigation Support." class="card-button" onclick="event.stopPropagation()">
+                Contact Us
+            </a>
+        </div>
     </div>
-     </div>
+</section>
 
-     <div class="card">
-         <i class='bx bx-group'></i>
-      <h3>Litigation Support</h3>
-      <p>A team of litigation experts ready to defend and accompany 
-        clients in maintaining civil and criminal business cases.</p>
-        <div class="card-buttons">
-      <button>Contact Us</button>
-    </div>
-  </div>
-  </div>
+</body>
+</html>ax

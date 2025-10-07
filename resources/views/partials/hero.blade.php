@@ -19,7 +19,7 @@
                         <a href="#home" class="nav-link">Home</a>
                         <a href="#about" class="nav-link">About</a>
                         <a href="#our services" class="nav-link">Our Services</a>
-                        <a href="#our clients" class="nav-link">Our Clients</a>
+                        <a href="#our clients" class="nav-link">Testimonials</a>
                     </nav>
                 </div>
                 <a href="{{ $whatsappLink }}" target="_blank"

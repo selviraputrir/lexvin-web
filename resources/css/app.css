@@ -1,5 +1,6 @@
 /* resources/css/app.css */
 @import "tailwindcss";
+
 @font-face {
     font-family: 'Vogue';
     src: url('../fonts/Vogue.ttf') format('truetype');
@@ -7,36 +8,42 @@
     font-style: normal;
 }
 
+/* ✅ BG-WINE-RED SUDAH DIUBAH MENJADI GRADASI 
+  Gradasi dari kiri (#451425) ke kanan (#200911)
+*/
+.bg-wine-red {
+    background-image: linear-gradient(to right, #451425, #2b0c1f);
+}
 
+.bg-ivory-white {
+    background-color: #FDFDFB;
+}
 
+.text-gold-accent {
+    color: #B89B65;
+}
 
-.bg-wine-red{
-    background-color: #451425;
+/* ✅ FONT-SANS SUDAH DIPERBAIKI 
+  Menggunakan properti `font-family` yang benar
+*/
+.font-sans {
+    font-family: 'Inter', sans-serif;
 }
-.bg-ivory-white{
-    background-color:  #FDFDFB;
+
+.bg-navy-dark {
+    background-color: #0D1B2A;
 }
-.text-gold-accent{
-    color:#B89B65;
-}
-.font-sans{
-    font-style: 'sans-serif';
-    font-style: 'inter';
-    
-}
-.bg-navy-dark{
-   background-color: #0D1B2A;
-}
+
 html {
     scroll-behavior: smooth;
 }
+
 .nav-link {
-  color: white; 
-  transition: color 0.3s ease;
-  text-decoration: none; 
+    color: white;
+    transition: color 0.3s ease;
+    text-decoration: none;
 }
 
 .nav-link:hover {
-  color: #451425;
+    color: #451443;
 }
-
