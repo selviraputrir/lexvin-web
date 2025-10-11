@@ -56,7 +56,7 @@
             margin: 0 auto;
         }
 
-        /* Perubahan: Kartu kembali menjadi div, tambahkan cursor: pointer */
+       
         .card {
             background: linear-gradient(135deg, var(--card-gradient-start), var(--card-gradient-end));
             padding: 30px;
@@ -102,7 +102,7 @@
             flex-grow: 1;
         }
         
-        /* Perubahan: Style untuk tombol yang sekarang adalah link <a> */
+        
         .card-button {
             background: transparent;
             color: var(--text-primary);
@@ -115,7 +115,7 @@
             text-align: center;
             display: inline-block;
             align-self: center;
-            text-decoration: none; /* Menghilangkan garis bawah link */
+            text-decoration: none;
         }
 
         .card .card-button:hover {
@@ -170,4 +170,4 @@
 </section>
 
 </body>
-</html>ax
+</html>
