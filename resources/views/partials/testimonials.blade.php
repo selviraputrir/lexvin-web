@@ -5,14 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonial Section</title>
 
-    {{-- Fonts from Google Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    {{-- Icons (Font Awesome) --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <style>
     body {
@@ -60,7 +56,7 @@
         padding: 15px 25px;
         box-shadow: 0 10px 30px rgba(41, 23, 30, 0.1);
         box-sizing: border-box;
-        border: 2px solid #e0e0e0; /* DIUBAH DI SINI */
+        border: 2px solid #e0e0e0; 
         height: auto;
         display: flex;
         flex-direction: column;
@@ -113,11 +109,10 @@
     }
     .swiper-button-prev::after, .swiper-button-next::after { font-size: 1rem; font-weight: bold; }
     
-    /* === BAGIAN YANG DIUBAH === */
+    
     .swiper-button-prev { left: 10px; }
     .swiper-button-next { right: 10px; }
-    /* ========================== */
-
+   
     .slider-pagination { margin-top: 40px; position: relative; bottom: auto; }
     .swiper-pagination-bullet {
         width: 10px;
