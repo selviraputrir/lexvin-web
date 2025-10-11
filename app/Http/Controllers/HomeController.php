@@ -11,13 +11,6 @@ class HomeController extends Controller
     {
         $services = Service::all();
 
-        $phoneNumber = env('WHATSAPP_NUMBER');
-        $message = env('WHATSAPP_MESSAGE');
-
-        $encodedMessage = rawurlencode($message);
-
-        $whatsappLink = "https://api.whatsapp.com/send?phone={$phoneNumber}&text={$encodedMessage}";
-
-        return view('home', compact('services', 'whatsappLink'));
+       return view('home', compact('services'));
     }
 }
