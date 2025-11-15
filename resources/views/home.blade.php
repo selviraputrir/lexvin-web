@@ -5,6 +5,7 @@
         @include('partials.about')
         @include('partials.services')
         @include('partials.testimonials')
+        
     </main>
     @include('partials.footer')
 @endsection

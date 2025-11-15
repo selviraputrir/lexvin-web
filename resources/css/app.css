@@ -1,49 +1,239 @@
-/* resources/css/app.css */
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@font-face {
-    font-family: 'Vogue';
-    src: url('../fonts/Vogue.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+@layer base {
+    @font-face {
+        font-family: 'Vogue';
+        src: url('../fonts/Vogue.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
 }
 
-/* ✅ BG-WINE-RED SUDAH DIUBAH MENJADI GRADASI 
-  Gradasi dari kiri (#451425) ke kanan (#200911)
-*/
-.bg-wine-red {
-    background-image: linear-gradient(to right, #451425, #2b0c1f);
+@layer components {
+    .bg-wine-red {
+        background-image: linear-gradient(to right, #451425, #2b0c1f);
+    }
+
+    .bg-ivory-white {
+        background-color: #FDFDFB;
+    }
+
+    .text-gold-accent {
+        color: #B89B65;
+    }
+
+    .font-sans {
+        font-family: 'Inter', sans-serif;
+    }
+
+    .bg-navy-dark {
+        background-color: #0D1B2A;
+    }
+
+    .nav-link {
+        color: white;
+        transition: color 0.3s ease;
+        text-decoration: none;
+    }
+
+    .nav-link:hover {
+        color: #451443;
+    }
+    
+    .contact-section {
+        position: relative;
+        padding: 80px 0;
+        overflow: hidden;
+    }
+
+    
+
+    .contact-grid {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    /* Form Kontak Kanan */
+    .contact-form {
+        background-color: #FDFDFB;
+        padding: 28px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 1rem; /* Menambahkan sudut melengkung */
+        max-width: 700px;    /* Membatasi lebar form */
+        width: 90%;
+    }
+
+    .contact-form h2 {
+        font-family: 'Vogue', 'Georgia', serif;
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .contact-form .subtitle {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 32px;
+    }
+
+    .form-group {
+        margin-bottom: 24px;
+    }
+
+    .form-label {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.25rem; 
+        font-weight: 500;
+        color: #374151; 
+        margin-bottom: 4px;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 12px 16px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        background-color: #f0f0f0;
+        font-family: 'Inter', sans-serif; 
+    }
+
+    .form-input:focus {
+        outline: none;
+        background-color: #e9e9e9;
+    }
+
+    textarea.form-input {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .contact-form .btn {
+        display: inline-block;
+        background-image: linear-gradient(to right, #451425, #2b0c1f);
+        color: #fff;
+        padding: 10px 24px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .contact-form .btn:hover {
+        opacity: 0.8;
+    }
+    
+    .alert {
+      padding: 16px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      border-left-width: 4px;
+      font-size: 14px;
+    }
+    .alert-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .alert-list {
+      list-style-position: inside;
+      list-style-type: disc;
+    }
+    .alert-success {
+      background-color: #f0fdf4;
+      border-color: #22c55e;
+      color: #15803d;
+    }
+    .alert-danger {
+      background-color: #fef2f2;
+      border-color: #ef4444;
+      color: #b91c1c;
+    }
+
+   
+    .admin-container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .admin-title {
+        font-family: 'Vogue', 'Georgia', serif;
+        font-size: 2.5rem;
+        color: #3a0f1b; 
+        border-bottom: 2px solid #B89B65; 
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+    }
+    .message-table {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        background-color: #fff;
+    }
+    .message-table th,
+    .message-table td {
+        border: 1px solid #ddd;
+        padding: 12px 15px;
+        text-align: left;
+        color: #333;
+    }
+    .message-table th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+        color: #555;
+    }
+    .message-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    .message-table tr:hover {
+        background-color: #f1f1f1;
+    }
+    .message-table .message-content {
+        max-width: 300px; 
+        white-space: pre-wrap; 
+        word-wrap: break-word;
+    }
+    .text-sm { font-size: 0.875rem; }
+    .text-gray-500 { color: #888; }
+    .font-bold { font-weight: bold; }
+    .text-green-600 { color: #16a34a; }
+    .text-red-600 { color: #dc2626; }
+    .btn-delete {
+        color: #dc2626;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+    .btn-delete:hover {
+        text-decoration: underline;
+    }
+    .btn-mark-read {
+        color: #0d6efd;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        font-size: 0.875rem; 
+    }
+    .btn-mark-read:hover {
+        text-decoration: underline;
+    }
 }
 
-.bg-ivory-white {
-    background-color: #FDFDFB;
-}
-
-.text-gold-accent {
-    color: #B89B65;
-}
-
-/* ✅ FONT-SANS SUDAH DIPERBAIKI 
-  Menggunakan properti `font-family` yang benar
-*/
-.font-sans {
-    font-family: 'Inter', sans-serif;
-}
-
-.bg-navy-dark {
-    background-color: #0D1B2A;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-.nav-link {
-    color: white;
-    transition: color 0.3s ease;
-    text-decoration: none;
-}
-
-.nav-link:hover {
-    color: #451443;
-}

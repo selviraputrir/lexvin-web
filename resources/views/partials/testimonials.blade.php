@@ -134,7 +134,7 @@
 </style>
 </head>
 <body>
-
+    <section id="testimonials">
     <div class="testimonial-section-wrapper">
         <div class="testimonial-header">
             <div class="testimonial-container">
@@ -215,5 +215,6 @@
             },
         });
     </script>
+    </section>
 </body>
 </html>
