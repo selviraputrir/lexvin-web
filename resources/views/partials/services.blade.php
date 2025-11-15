@@ -56,7 +56,10 @@
             margin: 0 auto;
         }
 
-        /* Perubahan: Kartu kembali menjadi div, tambahkan cursor: pointer */
+        
+        /* CSS untuk .card sekarang berlaku untuk tag <a>. 
+           Tambahkan text-decoration: none; untuk menghilangkan garis bawah link.
+        */
         .card {
             background: linear-gradient(135deg, var(--card-gradient-start), var(--card-gradient-end));
             padding: 30px;
@@ -67,7 +70,8 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            cursor: pointer; /* Memberi tanda bahwa area ini bisa diklik */
+            cursor: pointer;
+            text-decoration: none; /* Menghilangkan garis bawah dari link */
         }
 
         .card:hover {
@@ -102,7 +106,7 @@
             flex-grow: 1;
         }
         
-        /* Perubahan: Style untuk tombol yang sekarang adalah link <a> */
+        
         .card-button {
             background: transparent;
             color: var(--text-primary);
@@ -115,10 +119,13 @@
             text-align: center;
             display: inline-block;
             align-self: center;
-            text-decoration: none; /* Menghilangkan garis bawah link */
+            text-decoration: none;
         }
 
-        .card .card-button:hover {
+        /* Gunakan .card:hover .card-button 
+           agar efek hover-nya sinkron dengan hover pada card 
+        */
+        .card:hover .card-button {
             background: var(--text-primary);
             color: var(--card-gradient-start);
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -131,43 +138,47 @@
     <h2 class="services-title">Our Services</h2>
     <div class="services">
         
-        <div class="card" onclick="window.location.href='/halaman-konsultasi.html'">
+        <a class="card" href="{{ route('layanan.detail', ['id' => 1]) }}">
             <span class='bx bx-phone icon' aria-hidden="true"></span>
             <h3>Legal Consultation</h3>
             <p>Strategic consulting sessions to address both business and personal legal needs.</p>
-            <a href="https://wa.me/6281234567890?text=Halo, saya ingin bertanya tentang Legal Consultation." class="card-button" onclick="event.stopPropagation()">
-                Contact Us
-            </a>
-        </div>
+            
+            <span class="card-button">
+                see more
+            </span>
+        </a>
 
-        <div class="card" onclick="window.location.href='/halaman-retainer.html'">
+        <a class="card" href="{{ route('layanan.detail', ['id' => 2]) }}">
             <span class='bx bx-briefcase icon' aria-hidden="true"></span>
             <h3>Corporate Legal Retainer</h3>
             <p>Ongoing legal services for companies that need long-term legal partners.</p>
-            <a href="https://wa.me/6281234567890?text=Halo, saya ingin bertanya tentang Corporate Legal Retainer." class="card-button" onclick="event.stopPropagation()">
-                Contact Us
-            </a>
-        </div>
+            
+            <span class="card-button">
+                see more
+            </span>
+        </a>
 
-        <div class="card" onclick="window.location.href='/halaman-corporate.html'">
+        <a class="card" href="{{ route('layanan.detail', ['id' => 3]) }}">
             <span class='bx bx-bulb icon' aria-hidden="true"></span>
             <h3>Corporate Actions</h3>
             <p>Assistance in mergers, acquisitions, consolidations, and business separations.</p>
-            <a href="https://wa.me/6281234567890?text=Halo, saya ingin bertanya tentang Corporate Actions." class="card-button" onclick="event.stopPropagation()">
-                Contact Us
-            </a>
-        </div>
 
-        <div class="card" onclick="window.location.href='/halaman-litigasi.html'">
+            <span class="card-button">
+                see more
+            </span>
+        </a>
+
+        <a class="card" href="{{ route('layanan.detail', ['id' => 4]) }}">
             <span class='bx bx-group icon' aria-hidden="true"></span>
             <h3>Litigation Support</h3>
             <p>A team of litigation experts ready to defend and accompany clients in maintaining civil and criminal business cases.</p>
-            <a href="https://wa.me/6281234567890?text=Halo, saya ingin bertanya tentang Litigation Support." class="card-button" onclick="event.stopPropagation()">
-                Contact Us
-            </a>
-        </div>
+            
+            <span class="card-button">
+                see more
+            </span>
+        </a>
     </div>
 </section>
 
 </body>
-</html>ax
+</html>

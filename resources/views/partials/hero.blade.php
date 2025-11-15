@@ -22,7 +22,7 @@
                         <a href="#our clients" class="nav-link">Testimonials</a>
                     </nav>
                 </div>
-                <a href="{{ $whatsappLink }}" target="_blank"
+                <a href="https://wa.me/6281234567890?text=Halo, saya ingin bertanya tentang Litigation Support." 
                     class="hidden rounded-xl bg-wine-red px-6 py-2 text-sm font-bold text-white transition-opacity hover:opacity-90 md:block">
                     Contact Us
                 </a>
