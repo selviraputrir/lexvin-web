@@ -15,14 +15,11 @@
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #121212; /* Latar belakang body tetap gelap untuk preview di luar footer */
+            background-color: #121212; 
         }
 
-        /* --- FOOTER SECTION STYLES --- */
         .site-footer {
-            /* [DIUBAH] Mengembalikan latar belakang ke gradien ungu */
             background: linear-gradient(135deg, #550e27, #171717);
-            /* [DIHAPUS] Menghilangkan background-image (tekstur garis) */
             color: #b0b0b0;
             padding: 100px 0 40px 0;
             font-size: 0.95rem;
@@ -69,7 +66,7 @@
             bottom: 0;
             width: 40px;
             height: 2px;
-            background-color: #B89B65; /* Aksen emas */
+            background-color: #B89B65;
         }
 
         .footer-logo {
@@ -123,7 +120,7 @@
 
         .contact-info .fas {
             width: 25px;
-            color: #B89B65; /* Aksen emas pada ikon */
+            color: #B89B65;
             font-size: 1rem;
         }
         
@@ -155,7 +152,7 @@
         .footer-bottom {
             margin-top: 50px;
             padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1); /* Garis pemisah lebih halus */
+            border-top: 1px solid rgba(255, 255, 255, 0.1); 
             font-size: 0.9rem;
             color: #a0a0a0;
             display: flex;
@@ -174,7 +171,6 @@
             color: #ffffff;
         }
 
-        /* Media Queries untuk Responsif */
         @media (max-width: 768px) {
             .footer-grid {
                 flex-direction: column;
@@ -187,7 +183,7 @@
             .footer-column {
                 min-width: unset;
                 flex: none;
-                width: 100%; /* Memastikan kolom mengambil lebar penuh di mobile */
+                width: 100%; 
                 text-align: center;
             }
             .footer-column h3, .footer-logo {
@@ -228,10 +224,10 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-list">
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">ABOUT</a></li>
-                        <li><a href="#">OUR SERVICES</a></li>
-                        <li><a href="#">TESTIMONIALS</a></li>
+                        <li><a href="#home">HOME</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#our services">OUR SERVICES</a></li>
+                        <li><a href="#our clients">TESTIMONIALS</a></li>
                     </ul>
                 </div>
 
@@ -245,12 +241,6 @@
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <p id="copyright-year"></p>
-                <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
-                </div>
             </div>
         </div>
     </footer>
