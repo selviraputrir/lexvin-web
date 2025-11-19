@@ -192,12 +192,14 @@
                     <a href="/">
                         <img src="{{ asset('images/logo.png') }}" alt="LEXVIN" class="h-6 w-auto">
                     </a>
-                    <nav class="hidden items-center space-x-12 text-sm md:flex">
-                        <a href="#home" class="nav-link">Home</a>
-                        <a href="#about" class="nav-link">About</a>
-                        <a href="#our services" class="nav-link">Our Services</a>
-                        <a href="#our clients" class="nav-link">Testimonials</a>
-                    </nav>
+                    <nav class="hidden items-center space-x-10 text-base font-serif md:flex ml-16 text-white">
+    
+    <a href="#home" class="nav-link hover:opacity-80">Home</a>
+    <a href="#about" class="nav-link hover:opacity-80">About</a>
+    <a href="#services" class="nav-link hover:opacity-80">Our Services</a> 
+    <a href="#testimonials" class="nav-link hover:opacity-80">Testimonials</a> 
+
+</nav>
                 </div>
                 <a href="https://wa.me/6281234567890?text=Halo, saya ingin bertanya tentang Litigation Support." 
                     class="hidden rounded-xl bg-wine-red px-6 py-2 text-sm font-bold text-white transition-opacity hover:opacity-90 md:block">

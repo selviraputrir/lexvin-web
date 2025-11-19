@@ -2,37 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController; 
-<<<<<<< HEAD
-use App\Http\Controllers\PageController; 
-use App\Http\Controllers\LayananController;
-
-
-Route::get('/', [HomeController::class, 'index']);
-
-Route::get('/', function () {
-  
-    return view('home'); 
-});
-
-
-
-Route::get('/layanan/{id}', [LayananController::class, 'show'])->name('layanan.detail');
-=======
 use App\Http\Controllers\ContactFormController;
-use App\Http\Controllers\Admin\DashboardController; // <-- Tambahkan ini
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\LayananController; 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Di sinilah Anda dapat mendaftarkan rute web untuk aplikasi Anda. Rute-rute
-| ini dimuat oleh RouteServiceProvider dan semuanya akan
-| ditugaskan ke grup middleware "web". Buat sesuatu yang hebat!
-|
-*/
+Route::get('/layanan-detail/{slug}', function ($slug) {
+    return view('layanan-detail', ['kategori' => $slug]);
+})->name('layanan.detail');
 
-// Rute Halaman Depan
+Route::get('partials/layanan-detail1', [LayananController::class, 'detailKonsultasi'])->name('layanan.konsultasi.hukum');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Rute Formulir Kontak
@@ -48,4 +26,3 @@ Route::patch('/admin/messages/{id}/read', [DashboardController::class, 'markAsRe
 
 // Catatan: Rute Breeze ('/login', '/register') telah dihapus jika Anda mengikuti langkah uninstall.
 
->>>>>>> 53b6a817acee677e75e0d8096744b89ac1ee3109
