@@ -150,7 +150,7 @@
                     <span class='bx bx-briefcase icon' aria-hidden="true"></span>
                     <h3>Corporate Legal Retainer</h3>
                     <p>Ongoing legal services for companies that need long-term legal partners.</p>
-                    <a href="{{ route('layanan.detail1', ['id' => 2]) }}" class="card-button">
+                    <a href="{{ route('layanan.detail', ['id' => 2]) }}" class="card-button">
                         More Details
                     </a>
                 </div>
