@@ -245,13 +245,7 @@
         </div>
     </footer>
 
-    <div class="wa-container">
-        <div class="wa-pulse"></div>
-        
-        <a href="https://wa.me/6283876399688?text=Halo%20Admin,%20saya%20butuh%20bantuan" target="_blank" class="wa-button">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
+ 
 
 </body>
 </html>

@@ -286,7 +286,7 @@
 
                         {{-- KOLOM KIRI: Teks Deskripsi --}}
                         <div class="service-content">
-                            <h2>Corporate Legal Retainer</h2>
+                            <h2>Legal Consultan</h2>
                             <span class="divider"></span>
 
                             <p>
@@ -318,8 +318,8 @@
                     <div class="service-sidebar">
     <a href="{{ route('layanan.detail', ['id' => 1]) }}" class="service-box">
         <i class="fas fa-briefcase"></i>
-        <h3>Legal Consultation</h3>
-        <p>Strategic consulting sessions to address both business and personal legal needs.</p>
+        <h3>Corporate Legal Retainer</h3>
+        <p>Ongoing legal services for companies that need long-term legal partners.</p>
     </a>
 
     <a href="{{ route('layanan.detail', ['id' => 1]) }}" class="service-box">

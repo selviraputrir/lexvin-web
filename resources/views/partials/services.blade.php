@@ -70,7 +70,7 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            cursor: pointer;
+            /* Hapus cursor: pointer; jika tidak ada onclick pada card */
         }
 
         .card:hover {
@@ -133,54 +133,51 @@
     <section id="services">
         <h2 class="services-title">Our Services</h2>
 
-     <div class="services">
-    <div data-aos="zoom-in" data-aos-duration="1000">
-        <div class="card" onclick="window.location.href='/halaman-konsultasi.html'">
-            <span class='bx bx-phone icon' aria-hidden="true"></span>
-            <h3>Legal Consultation</h3>
-            <p>Strategic consulting sessions to address both business and personal legal needs.</p>
-            <a href="{{ route('partials.layanan-detail1', ['id' => 1]) }}" class="service-box">
-               class="card-button" onclick="event.stopPropagation()">
-                More Details
-            </a>
-        </div>
-    </div>
+        <div class="services">
+            <div class="card-wrapper">
+                <div class="card">
+                    <span class='bx bx-phone icon' aria-hidden="true"></span>
+                    <h3>Legal Consultation</h3>
+                    <p>Strategic consulting sessions to address both business and personal legal needs.</p>
+                    <a href="{{ route('layanan.detail', ['id' => 1]) }}" class="card-button">
+                        More Details
+                    </a>
+                </div>
+            </div>
 
-    <div data-aos="zoom-in" data-aos-duration="1000">
-        <div class="card" onclick="window.location.href='/halaman-retainer.html'">
-            <span class='bx bx-briefcase icon' aria-hidden="true"></span>
-            <h3>Corporate Legal Retainer</h3>
-            <p>Ongoing legal services for companies that need long-term legal partners.</p>
-             <a href="{{ route('partials.layanan-detail2', ['id' => 2]) }}" class="service-box">
-               class="card-button" onclick="event.stopPropagation()">
-                More Details
-            </a>
-        </div>
-    </div>
+            <div class="card-wrapper">
+                <div class="card">
+                    <span class='bx bx-briefcase icon' aria-hidden="true"></span>
+                    <h3>Corporate Legal Retainer</h3>
+                    <p>Ongoing legal services for companies that need long-term legal partners.</p>
+                    <a href="{{ route('layanan.detail1', ['id' => 2]) }}" class="card-button">
+                        More Details
+                    </a>
+                </div>
+            </div>
 
-    <div data-aos="zoom-in" data-aos-duration="1000">
-        <div class="card" onclick="window.location.href='/halaman-corporate.html'">
-            <span class='bx bx-bulb icon' aria-hidden="true"></span>
-            <h3>Corporate Actions</h3>
-            <p>Assistance in mergers, acquisitions, consolidations, and business separations.</p>
-           <a href="{{ route('partials.layanan-detail3', ['id' => 3]) }}" class="service-box">
-               class="card-button" onclick="event.stopPropagation()">
-                More Details
-            </a>
-        </div>
-    </div>
+            <div class="card-wrapper">
+                <div class="card">
+                    <span class='bx bx-bulb icon' aria-hidden="true"></span>
+                    <h3>Corporate Actions</h3>
+                    <p>Assistance in mergers, acquisitions, consolidations, and business separations.</p>
+                    <a href="{{ route('layanan.detail', ['id' => 3]) }}" class="card-button">
+                        More Details
+                    </a>
+                </div>
+            </div>
 
-    <div data-aos="zoom-in" data-aos-duration="1000">
-        <div class="card" onclick="window.location.href='/halaman-litigasi.html'">
-            <span class='bx bx-group icon' aria-hidden="true"></span>
-            <h3>Litigation Support</h3>
-            <p>A team of litigation experts ready to defend and accompany clients in maintaining civil and criminal business cases.</p>
-              <a href="{{ route('partials.layanan-detail4', ['id' => 4]) }}" class="service-box">
-               class="card-button" onclick="event.stopPropagation()">
-                More Details
-            </a>
+            <div class="card-wrapper">
+                <div class="card">
+                    <span class='bx bx-group icon' aria-hidden="true"></span>
+                    <h3>Litigation Support</h3>
+                    <p>A team of litigation experts ready to defend and accompany clients in maintaining civil and criminal business cases.</p>
+                    <a href="{{ route('layanan.detail', ['id' => 4]) }}" class="card-button">
+                        More Details
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </section>
 </body>
 </html>
