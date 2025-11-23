@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+
 use App\Http\Controllers\HomeController; 
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\Admin\DashboardController; 
-use App\Http\Controllers\AdminAuthController; // <--- Tambahan: Import Controller Login
+use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\LayananController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +17,8 @@ use App\Http\Controllers\AdminAuthController; // <--- Tambahan: Import Controlle
 
 // --- HALAMAN PUBLIK (Bisa diakses siapa saja) ---
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/layanan/{id}', [LayananController::class, 'show'])->name('layanan.detail');
+
 
 Route::get('/hubungi-kami', [ContactFormController::class, 'create'])->name('contact.create');
 Route::post('/hubungi-kami', [ContactFormController::class, 'store'])->name('contact.store');
@@ -47,3 +52,4 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
 });
+

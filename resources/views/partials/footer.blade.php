@@ -37,8 +37,10 @@
         .footer-grid {
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-between; /* Agar kolom rata kiri-kanan */
             gap: 40px;
             margin-bottom: 50px;
+            position: relative;
         }
 
         .footer-column.about {
@@ -48,35 +50,34 @@
         .footer-column {
             flex: 1;
             min-width: 220px;
+            /* padding-left: 20px; <--- dihapus */
+            z-index: 1;
+        }
+        .footer-column:last-child {
+            padding-right: 0;
+            border-right: none;
         }
 
-        .footer-column h3 {
-            font-family: 'Merriweather', serif;
-            color: #ffffff;
-            font-size: 1.3rem;
-            margin-top: 0;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 2px;
-            background-color: #B89B65;
-        }
+        /* Garis emas di bawah judul dihapus */
+        /* .footer-column h3::after { ... } <--- dihapus */
 
         .footer-logo {
             font-family: 'Merriweather', serif;
             color: #B89B65 !important;
             font-size: 2rem !important;
             letter-spacing: 2px;
+            margin-bottom: 15px;
+            display: block;
         }
-        .footer-logo::after {
-            display: none;
+        
+        .footer-column h3 { /* Menambahkan style default untuk h3 yang sebelumnya terpengaruh ::after */
+            font-family: 'Merriweather', serif;
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 0; /* Pastikan tidak ada padding sisa dari ::after */
         }
 
 
@@ -88,6 +89,9 @@
 
         .footer-list li {
             margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .footer-list a {
@@ -118,37 +122,15 @@
             transform-origin: bottom left;
         }
 
-        .contact-info .fas {
+        .contact-info .fas,
+        .contact-info .fab { 
             width: 25px;
             color: #B89B65;
             font-size: 1rem;
+            text-align: center;
+            flex-shrink: 0;
         }
         
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
-        }
-        .social-icons a {
-            color: #b0b0b0;
-            font-size: 1.1rem;
-            transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            border: 1px solid #444;
-            text-decoration: none;
-        }
-        .social-icons a:hover {
-            color: #1a1a1a;
-            background-color: #B89B65;
-            border-color: #B89B65;
-            transform: translateY(-3px);
-        }
-
         .footer-bottom {
             margin-top: 50px;
             padding-top: 30px;
@@ -161,6 +143,7 @@
             flex-wrap: wrap;
             gap: 15px;
         }
+
         .footer-bottom-links a {
             color: #a0a0a0;
             text-decoration: none;
@@ -171,40 +154,49 @@
             color: #ffffff;
         }
 
-        @media (max-width: 768px) {
-            .footer-grid {
-                flex-direction: column;
-                gap: 30px;
+
+        
+        @keyframes wa-pulse-animation {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
             }
+            100% {
+                transform: scale(1.6);
+                opacity: 0;
+            }
+        }
+
+        /* Responsif Tablet/HP */
+        @media (max-width: 992px) {
+            /* Garis vertikal di media query juga dihapus */
+            /* .footer-grid::before { display: none; } <--- dihapus */
             .footer-column.about {
-                min-width: unset;
-                flex: none;
+                padding-right: 0; /* border-right juga dihapus di sini */
             }
             .footer-column {
-                min-width: unset;
-                flex: none;
+                padding-left: 0;
+            }
+            .footer-grid { 
+                flex-direction: column; 
+                gap: 30px; 
+            }
+            .footer-column.about, .footer-column {
+                min-width: unset; 
+                flex: none; 
                 width: 100%; 
                 text-align: center;
             }
-            .footer-column h3, .footer-logo {
-                text-align: center;
+            .footer-column h3, .footer-logo { 
+                text-align: center; 
             }
-            .footer-column h3::after {
-                left: 50%;
-                transform: translateX(-50%);
+            /* .footer-column h3::after { <--- dihapus (garis emas di mobile) } */
+            .footer-list, .footer-list li { 
+                justify-content: center; 
             }
-            .social-icons {
-                justify-content: center;
-            }
-            .footer-list {
-                text-align: center;
-            }
-            .footer-bottom {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .footer-bottom-links a {
-                margin: 0 10px;
+            .footer-bottom { 
+                flex-direction: column; 
+                gap: 10px; 
             }
         }
     </style>
@@ -216,9 +208,7 @@
             <div class="footer-grid">
                 <div class="footer-column about">
                     <h3 class="footer-logo">LEXVIN</h3>
-                    <p>
-                        Providing innovative and practical legal solutions to protect and grow your business in the digital era.
-                    </p>
+                    <p>Providing innovative and practical legal solutions to protect and grow your business in the digital era.</p>
                 </div>
 
                 <div class="footer-column">
@@ -226,28 +216,36 @@
                     <ul class="footer-list">
                         <li><a href="#home">HOME</a></li>
                         <li><a href="#about">ABOUT</a></li>
-                        <li><a href="#our services">OUR SERVICES</a></li>
-                        <li><a href="#our clients">TESTIMONIALS</a></li>
+                        <li><a href="#services">OUR SERVICES</a></li>
+                        <li><a href="#testimonials">TESTIMONIALS</a></li>
                     </ul>
                 </div>
-
+            
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="footer-list contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> Jl. ciawi bitung sari</li>
+                        <li>
+                            <a href="https://instagram.com/lexvin.law" target="_blank" style="color: inherit; text-decoration: none;">
+                                <i class="fab fa-instagram"></i> @lexvin.law
+                            </a>
+                        </li>
                         <li><i class="fas fa-phone"></i> +628-3876-3996-88</li>
                         <li><i class="fas fa-envelope"></i> contact@lexvin.co.id</li>
                     </ul>
                 </div>
             </div>
 
+            <div class="footer-bottom">
+                <p id="copyright-year">&copy; 2023 LEXVIN. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        document.getElementById('copyright-year').innerHTML = `&copy; ${new Date().getFullYear()} LEXVIN. All Rights Reserved.`;
-    </script>
+ 
 
 </body>
 </html>
