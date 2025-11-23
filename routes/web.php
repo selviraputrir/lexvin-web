@@ -3,32 +3,47 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController; 
 use App\Http\Controllers\ContactFormController;
-use App\Http\Controllers\Admin\DashboardController; // <-- Tambahkan ini
+use App\Http\Controllers\Admin\DashboardController; 
+use App\Http\Controllers\AdminAuthController; // <--- Tambahan: Import Controller Login
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Di sinilah Anda dapat mendaftarkan rute web untuk aplikasi Anda. Rute-rute
-| ini dimuat oleh RouteServiceProvider dan semuanya akan
-| ditugaskan ke grup middleware "web". Buat sesuatu yang hebat!
-|
 */
 
-// Rute Halaman Depan
+// --- HALAMAN PUBLIK (Bisa diakses siapa saja) ---
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Rute Formulir Kontak
 Route::get('/hubungi-kami', [ContactFormController::class, 'create'])->name('contact.create');
 Route::post('/hubungi-kami', [ContactFormController::class, 'store'])->name('contact.store');
 
 
-// --- RUTE ADMIN (TANPA PENGAMAN LOGIN) ---
-// Rute ini sekarang bisa diakses siapa saja
-Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
-Route::delete('/admin/messages/{id}', [DashboardController::class, 'destroy'])->name('admin.message.destroy');
-Route::patch('/admin/messages/{id}/read', [DashboardController::class, 'markAsRead'])->name('admin.message.read');
+// --- HALAMAN AUTH (Hanya untuk yang BELUM login) ---
+Route::middleware('guest')->group(function () {
+    Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
+});
 
-// Catatan: Rute Breeze ('/login', '/register') telah dihapus jika Anda mengikuti langkah uninstall.
 
+// --- HALAMAN ADMIN (Hanya untuk yang SUDAH login) ---
+// Kita tambahkan middleware 'auth' di sini untuk keamanan
+Route::middleware('auth')->prefix('admin')->group(function () {
+    
+    // Redirect /admin ke /admin/dashboard atau /admin/messages
+    Route::get('/', function () {
+        return redirect()->route('admin.dashboard');
+    });
+
+    // Dashboard Utama (Bisa diarahkan ke index pesan atau halaman dashboard terpisah)
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    
+    // Manajemen Pesan
+    Route::get('/messages', [DashboardController::class, 'index'])->name('admin.messages.index'); 
+    Route::delete('/messages/{id}', [DashboardController::class, 'destroy'])->name('admin.message.destroy');
+    Route::patch('/messages/{id}/read', [DashboardController::class, 'markAsRead'])->name('admin.message.read');
+
+    // Logout
+    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+
+});

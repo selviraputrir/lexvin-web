@@ -137,7 +137,7 @@
             height: 100%;
 
             cursor: pointer;
-            /* Memberi tanda bahwa area ini bisa diklik */
+          
 
         }
 
