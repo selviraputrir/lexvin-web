@@ -141,7 +141,7 @@
         <h2 class="services-title">Our Services</h2>
 
         <div class="services">
-            <div class="card-wrapper">
+            <div class="card-wrapper"data-aos="zoom-in"data-aos-duration="1000">
                 <div class="card">
                     <span class='bx bx-phone icon' aria-hidden="true"></span>
                     <h3>Legal Consultation</h3>
@@ -153,7 +153,7 @@
             </div>
 
             <div class="card-wrapper">
-                <div class="card">
+                <div class="card"data-aos="zoom-in"data-aos-duration="1000">
                     <span class='bx bx-briefcase icon' aria-hidden="true"></span>
                     <h3>Corporate Legal Retainer</h3>
                     <p>Ongoing legal services for companies that need long-term legal partners.</p>
@@ -164,7 +164,7 @@
             </div>
 
             <div class="card-wrapper">
-                <div class="card">
+                <div class="card" data-aos="zoom-in"data-aos-duration="1000">
                     <span class='bx bx-bulb icon' aria-hidden="true"></span>
                     <h3>Corporate Actions</h3>
                     <p>Assistance in mergers, acquisitions, consolidations, and business separations.</p>
@@ -175,7 +175,7 @@
             </div>
 
             <div class="card-wrapper">
-                <div class="card">
+                <div class="card" data-aos="zoom-in"data-aos-duration="1000">
                     <span class='bx bx-group icon' aria-hidden="true"></span>
                     <h3>Litigation Support</h3>
                     <p>A team of litigation experts ready to defend and accompany clients in maintaining civil and criminal business cases.</p>

@@ -26,18 +26,6 @@
 
                     </nav>
 
-                    <style>
-                        .custom-margin {
-                            margin-right: 50px;
-                        }
-
-                        .custom-margin-2 {
-                            background: black;
-                            margin-left: -70px;
-
-                            z-index: 100;
-                        }
-                    </style>
                 </div>
 
                 <a href="{{ route('contact.create') }}"
@@ -53,18 +41,16 @@
                 </label>
 
                 <div id="mobile-menu"
-                    class="hidden peer-checked:flex md:hidden absolute top-0 left-0 w-full h-screen bg-black/90 backdrop-blur-sm flex-col items-center justify-center space-y-8 text-xl z-40">
-
-                    <label for="menu-toggle" class="absolute top-8 right-5 text-white text-3xl cursor-pointer">
-                        <i class="fas fa-times"></i>
-                    </label>
-
-                    <a href="#home" class="nav-link text-2xl">Home</a>
-                    <a href="#about" class="nav-link text-2xl">About</a>
-                    <a href="#services" class="nav-link text-2xl">Services</a>
-                    <a href="#testimonials" class="nav-link text-2xl">Testimonials</a>
-                    <a href="{{ route('contact.create') }}" class="nav-link text-2xl">Contact Us</a>
-                </div>
+                        class="hidden peer-checked:flex md:hidden absolute top-0 left-0 w-full h-screen bg-white/95 backdrop-blur-sm flex-col items-center justify-center space-y-8 text-xl z-40 shadow-lg">
+                        <label for="menu-toggle" class="absolute top-8 right-5 text-gray-900 text-3xl cursor-pointer hover:text-custom-wine">
+                            <i class="fas fa-times"></i>
+                        </label>
+                        <a href="/" class="nav-link text-gray-900 hover:text-custom-wine font-serif">Home</a>
+                        <a href="/#about" class="nav-link text-gray-900 hover:text-custom-wine font-serif">About</a>
+                        <a href="/#services" class="nav-link text-gray-900 hover:text-custom-wine font-serif">Services</a>
+                        <a href="/#testimonials" class="nav-link text-gray-900 hover:text-custom-wine font-serif">Testimonials</a>
+                        <a href="{{ route('contact.create') }}" class="nav-link text-gray-900 hover:text-custom-wine font-serif font-bold">Contact Us</a>
+                    </div>
             </header>
 
             <div class="flex-grow flex items-center justify-center text-center px-4">
