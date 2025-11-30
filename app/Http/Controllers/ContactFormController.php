@@ -24,7 +24,6 @@ class ContactFormController extends Controller
      */
     public function store(Request $request)
     {
-        // 1. Validasi data yang masuk
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
@@ -32,22 +31,16 @@ class ContactFormController extends Controller
             'message' => 'required|string|min:5',
         ]);
 
-        // 2. SIMPAN KE DATABASE
         $message = ContactMessage::create($validatedData);
 
-        // 3. KIRIM NOTIFIKASI EMAIL (KEPADA ADMIN DAN KONSUMEN)
         try {
-            // A. Kirim ke Admin
-            Mail::to('putriselvira902@gmail.com')->send(new NewContactMessage($message));
-            
-            // B. Kirim Balasan Otomatis ke Konsumen (MENGGUNAKAN EMAIL YANG MEREKA INPUT)
+            Mail::to('lexvin38@gmail.com')->send(new NewContactMessage($message));
             Mail::to($message->email)->send(new ContactAutoReply($message));
 
         } catch (\Exception $e) {
             Log::error('Gagal mengirim notifikasi email: ' . $e->getMessage());
         }
         
-        // 4. Redirect kembali dengan pesan sukses
         return redirect()->route('contact.create')
                              ->with('success', 'Pesan Anda telah terkirim! Silakan cek email Anda untuk konfirmasi.');
     }

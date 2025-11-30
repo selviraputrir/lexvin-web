@@ -40,7 +40,6 @@ class ContactAutoReply extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            // Subjek konfirmasi yang ramah untuk konsumen
             subject: 'Konfirmasi Penerimaan Pesan dari LEXVIN',
         );
     }
@@ -53,7 +52,6 @@ class ContactAutoReply extends Mailable
     public function content(): Content
     {
         return new Content(
-            // Menggunakan template Markdown Blade yang berbeda
             markdown: 'emails.contact.contact_auto_reply',
         );
     }

@@ -52,8 +52,6 @@
 
                 <p class="font-serif text-3xl italic text-gold-accent">Vincentio Mardana</p>
 
-                <p class="mt-1 text-sm text-black">CEO & Founder</p>
-
             </div>
 
         </div>

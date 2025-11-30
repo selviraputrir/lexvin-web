@@ -19,7 +19,7 @@ class ContactMessage extends Model
         'email',
         'phone',
         'message',
-        'is_read', // 'is_read' juga boleh diisi
+        'is_read', 
     ];
 
     /**

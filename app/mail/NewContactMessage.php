@@ -40,7 +40,6 @@ class NewContactMessage extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            // Subject in Indonesian
             subject: 'Pesan Kontak Baru dari ' . $this->message->name,
         );
     }
@@ -53,7 +52,6 @@ class NewContactMessage extends Mailable
     public function content(): Content
     {
         return new Content(
-            // Use the Markdown Blade template
             markdown: 'emails.contact.new_message',
         );
     }

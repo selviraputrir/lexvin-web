@@ -10,7 +10,7 @@ class PageController extends Controller
     public function showServiceDetail()
     {
     
-      return views('layouts.layanan-detail');
+      return view('layouts.layanan-detail');
     }
 
 }
