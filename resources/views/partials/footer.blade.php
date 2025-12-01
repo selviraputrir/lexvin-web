@@ -229,8 +229,8 @@
                                 <i class="fab fa-instagram"></i> @lexvin.law
                             </a>
                         </li>
-                        <li><i class="fas fa-phone"></i> +628-3876-3996-88</li>
-                        <li><i class="fas fa-envelope"></i> contact@lexvin.co.id</li>
+                        <li><i class="fas fa-phone"></i> +628-1412-2194-19</li>
+                        <li><i class="fas fa-envelope"></i>lexvin38@gmail.com</li>
                     </ul>
                 </div>
             </div>

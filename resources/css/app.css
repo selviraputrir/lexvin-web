@@ -17,6 +17,7 @@
     }
 }
 
+
 @layer components {
     .font-serif-custom {
         font-family: 'Playfair Display', serif;

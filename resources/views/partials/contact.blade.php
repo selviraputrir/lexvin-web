@@ -161,14 +161,14 @@
                             <div class="mt-1 text-gold-accent text-lg group-hover:text-yellow-400 transition">
                                 <i class="far fa-envelope"></i>
                             </div>
-                            <div class="text-sm leading-relaxed font-light">contact@lexvin.com</div>
+                            <div class="text-sm leading-relaxed font-light">lexvin38@gmail.com</div>
                         </div>
     
                         <div class="flex items-start gap-4 group">
                             <div class="mt-1 text-gold-accent text-lg group-hover:text-yellow-400 transition">
                                 <i class="fas fa-phone-alt"></i>
                             </div>
-                            <div class="text-sm font-light">(+62) 338-763-996-88</div>
+                            <div class="text-sm font-light">(+62)814-1221-9419</div>
                         </div>
     
                         <div class="flex items-start gap-4 group">

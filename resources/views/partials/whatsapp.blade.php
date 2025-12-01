@@ -2,7 +2,7 @@
     <div class="fixed bottom-8 right-8 z-50 group">
         <div class="absolute inset-0 rounded-full bg-green-500 opacity-75 animate-ping"></div>
 
-        <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20butuh%20bantuan" 
+        <a href="https://wa.me/6281412219419?text=Halo%20Admin,%20saya%20butuh%20bantuan" 
            target="_blank"
            class="relative flex items-center justify-center w-16 h-16 bg-[#25d366] text-white rounded-full shadow-xl shadow-green-500/40 transition-all duration-300 transform group-hover:scale-110 group-hover:-translate-y-1">
             
