@@ -116,12 +116,7 @@
                 </header>
 
                 {{-- Judul Hero --}}
-                <div class="flex-grow flex items-center justify-center text-center px-4">
-                    <h1 class="font-serif text-3xl font-bold leading-tight text-white drop-shadow-lg md:text-5xl">
-                        OUR SERVICES<br>
-                        <span class="text-gray-300 text-2xl md:text-4xl">Professional Legal Solutions</span>
-                    </h1>
-                </div>
+                
             </div>
         </section>
 
