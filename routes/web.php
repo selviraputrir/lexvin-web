@@ -17,6 +17,12 @@ use App\Http\Controllers\LayananController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/layanan/{id}', [LayananController::class, 'show'])->name('layanan.detail');
 
+// File: routes/web.php
+
+Route::get('/layanan-lengkap', function () {
+    return view('layanan-detail'); // Pastikan nanti nama file view-nya 'layanan-detail.blade.php'
+})->name('services.all');
+
 Route::get('/hubungi-kami', [ContactFormController::class, 'create'])->name('contact.create');
 Route::post('/hubungi-kami', [ContactFormController::class, 'store'])->name('contact.store');
 

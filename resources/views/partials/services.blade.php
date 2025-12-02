@@ -24,9 +24,7 @@
             --font-body: 'Lato', sans-serif;
         }
 
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { box-sizing: border-box; }
 
         html, body {
             width: 100%;
@@ -34,9 +32,9 @@
             margin: 0;
             background-color: var(--background-color);
             font-family: var(--font-body);
+            scroll-behavior: smooth; /* PENTING: Agar scroll-nya halus */
         }
 
-        /* SECTION TITLE */
         .services-title {
             text-align: center;
             margin: 40px auto;
@@ -49,7 +47,6 @@
             font-family: var(--font-heading);
         }
 
-        /* GRID LAYOUT */
         .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -59,7 +56,6 @@
             margin: 0 auto;
         }
 
-        /* CARD STYLE */
         .card {
             background: linear-gradient(135deg, var(--card-gradient-start), var(--card-gradient-end));
             padding: 30px;
@@ -70,14 +66,6 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-<<<<<<< HEAD
-
-            cursor: pointer;
-          
-
-=======
-            /* Hapus cursor: pointer; jika tidak ada onclick pada card */
->>>>>>> 4d89bdb45bea0abaf7c1773e39cebb33c6af5af7
         }
 
         .card:hover {
@@ -93,9 +81,7 @@
             transition: color 0.3s, transform 0.3s;
         }
 
-        .card:hover .icon {
-            transform: scale(1.1);
-        }
+        .card:hover .icon { transform: scale(1.1); }
 
         .card h3 {
             font-size: 22px;
@@ -112,7 +98,6 @@
             flex-grow: 1;
         }
 
-        /* BUTTON STYLE */
         .card-button {
             background: transparent;
             color: var(--text-primary);
@@ -141,45 +126,49 @@
         <h2 class="services-title">Our Services</h2>
 
         <div class="services">
-            <div class="card-wrapper"data-aos="zoom-in"data-aos-duration="1000">
+            <div class="card-wrapper" data-aos="zoom-in" data-aos-duration="1000">
                 <div class="card">
                     <span class='bx bx-phone icon' aria-hidden="true"></span>
                     <h3>Legal Consultation</h3>
                     <p>Strategic consulting sessions to address both business and personal legal needs.</p>
-                    <a href="{{ route('layanan.detail', ['id' => 1]) }}" class="card-button">
+                    
+                    <a href="{{ route('layanan.detail', ['id' => 1]) }}#legal-consultation" class="card-button">
                         More Details
                     </a>
                 </div>
             </div>
 
-            <div class="card-wrapper">
-                <div class="card"data-aos="zoom-in"data-aos-duration="1000">
+            <div class="card-wrapper" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="card">
                     <span class='bx bx-briefcase icon' aria-hidden="true"></span>
                     <h3>Corporate Legal Retainer</h3>
                     <p>Ongoing legal services for companies that need long-term legal partners.</p>
-                    <a href="{{ route('layanan.detail', ['id' => 2]) }}" class="card-button">
+                    
+                    <a href="{{ route('layanan.detail', ['id' => 2]) }}#corporate-retainer" class="card-button">
                         More Details
                     </a>
                 </div>
             </div>
 
-            <div class="card-wrapper">
-                <div class="card" data-aos="zoom-in"data-aos-duration="1000">
+            <div class="card-wrapper" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="card">
                     <span class='bx bx-bulb icon' aria-hidden="true"></span>
                     <h3>Corporate Actions</h3>
                     <p>Assistance in mergers, acquisitions, consolidations, and business separations.</p>
-                    <a href="{{ route('layanan.detail', ['id' => 3]) }}" class="card-button">
+                    
+                    <a href="{{ route('layanan.detail', ['id' => 3]) }}#corporate-actions" class="card-button">
                         More Details
                     </a>
                 </div>
             </div>
 
-            <div class="card-wrapper">
-                <div class="card" data-aos="zoom-in"data-aos-duration="1000">
+            <div class="card-wrapper" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="card">
                     <span class='bx bx-group icon' aria-hidden="true"></span>
                     <h3>Litigation Support</h3>
                     <p>A team of litigation experts ready to defend and accompany clients in maintaining civil and criminal business cases.</p>
-                    <a href="{{ route('layanan.detail', ['id' => 4]) }}" class="card-button">
+                    
+                    <a href="{{ route('layanan.detail', ['id' => 4]) }}#litigation-support" class="card-button">
                         More Details
                     </a>
                 </div>
