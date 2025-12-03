@@ -1,29 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-
-{{-- 1. STYLE CSS KHUSUS HALAMAN INI --}}
 <style>
     :root {
-        --primary-accent: #B89B65; /* Emas */
-        --text-secondary: #d1d1d1; /* Abu terang */
-        --card-gradient-start: #451425; /* Marun Gelap */
-        --card-gradient-end: #1a080f; /* Hitam Marun */
+        --primary-accent: #B89B65; 
+        --text-secondary: #d1d1d1; 
+        --card-gradient-start: #451425; 
+        --card-gradient-end: #1a080f; 
         --font-heading: 'Playfair Display', serif;
         --font-body: 'Lato', sans-serif;
     }
 
-    /* Hero & Layout */
     .bg-black { background-color: black; }
     .custom-margin-2 { background: black; margin-left: -70px; z-index: 100; }
     .nav-link { color: white; text-decoration: none; transition: 0.3s; }
     .nav-link:hover { opacity: 0.8; color: var(--primary-accent); }
 
-    /* Service Section */
     .service-detail-section { padding: 80px 0; color: #ffffff; }
     .service-detail-wrapper { display: flex; flex-wrap: wrap; gap: 50px; }
 
-    /* Kolom Kiri (Konten) */
     .service-content { flex: 2; min-width: 300px; }
     .service-content h2 { 
         font-size: 36px; color: #ffffff; margin-bottom: 10px; 
@@ -44,7 +39,6 @@
         color: var(--primary-accent); font-weight: bold; font-size: 1.2em; 
     }
 
-    /* Kolom Kanan (Sidebar Tombol) */
     .service-sidebar { flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 20px; }
     
     .service-box {
@@ -61,9 +55,8 @@
         border-color: var(--primary-accent);
     }
 
-    /* Style kotak saat AKTIF (Dipilih) */
     .service-box.active {
-        background: var(--primary-accent); /* Jadi warna Emas */
+        background: var(--primary-accent); 
         border-color: var(--primary-accent);
         transform: scale(1.02);
         box-shadow: 0 10px 20px rgba(0,0,0,0.3);
@@ -72,7 +65,7 @@
     .service-box.active h3, 
     .service-box.active p, 
     .service-box.active i {
-        color: #1a080f !important; /* Teks jadi gelap agar terbaca di background emas */
+        color: #1a080f !important; 
     }
 
     .service-box i { font-size: 28px; color: var(--primary-accent); margin-bottom: 15px; display: block; }
@@ -87,16 +80,13 @@
 <main>
     <div class="bg-black pt-7 min-h-screen">
 
-        {{-- 2. HERO SECTION (GAMBAR & NAVBAR) --}}
         <section id="home" class="relative container mx-auto" style="height: 60vh;">
-            {{-- Background Image --}}
             <div class="absolute inset-0 bg-center bg-no-repeat bg-cover rounded-xl"
                 style="background-image: url('{{ asset('images/background-hero.jpg') }}');">
                 <div class="absolute inset-0 bg-black/50 rounded-xl"></div>
             </div>
 
             <div class="relative z-10 flex flex-col h-full">
-                {{-- Navbar --}}
                 <header class="flex items-center justify-between p-4 md:p-0">
                     <div class="bg-black py-4 pl-20 pr-40 [clip-path:polygon(0_0,100%_0,96%_100%,0_100%)] flex items-center z-20">
                         <a href="/">
@@ -114,28 +104,18 @@
                         Contact Us
                     </a>
                 </header>
-
-                {{-- Judul Hero --}}
-                <div class="flex-grow flex items-center justify-center text-center px-4">
-                    <h1 class="font-serif text-3xl font-bold leading-tight text-white drop-shadow-lg md:text-5xl">
-                        OUR SERVICES<br>
-                        <span class="text-gray-300 text-2xl md:text-4xl">Professional Legal Solutions</span>
-                    </h1>
-                </div>
+                
             </div>
         </section>
 
-        {{-- 3. BAGIAN KONTEN LAYANAN (INTERAKTIF) --}}
         <section class="service-detail-section">
             <div class="container mx-auto px-4"> <div class="service-detail-wrapper">
 
-                    {{-- KOLOM KIRI: Area Teks yang Berubah --}}
                     <div class="service-content">
                         <h2 id="service-title">Legal Consultant</h2>
                         <span class="divider"></span>
 
                         <div id="service-body">
-                            {{-- Konten Awal (Default) --}}
                             <p>
                                 Strategic consulting sessions to address both business and personal legal needs. This is an
                                 initial or gateway service for clients. Anyone (either on behalf of an individual or a
@@ -154,8 +134,6 @@
                             </p>
                         </div>
                     </div>
-
-                    {{-- KOLOM KANAN: Tombol Pilihan --}}
                     <div class="service-sidebar">
                         
                         <div class="service-box active" onclick="changeService(1, this)">
@@ -192,10 +170,7 @@
 
     @include('partials.footer')
 </main>
-
-{{-- 4. JAVASCRIPT LOGIC (Update Konten Tanpa Reload) --}}
 <script>
-    // Database Konten Teks
     const servicesData = {
         1: {
             title: "Legal Consultant",
@@ -254,14 +229,10 @@
         }
     };
 
-    // Fungsi Pengubah Konten
     function changeService(id, element) {
-        // 1. Ambil data
         const data = servicesData[id];
 
-        // 2. Update Tampilan
         if (data) {
-            // Efek fade out/in sederhana (opsional, bisa dihapus kalau mau instan)
             const title = document.getElementById('service-title');
             const body = document.getElementById('service-body');
             
@@ -276,7 +247,6 @@
             }, 200);
         }
 
-        // 3. Update Tombol Aktif
         const boxes = document.querySelectorAll('.service-box');
         boxes.forEach(box => {
             box.classList.remove('active');
@@ -284,8 +254,6 @@
         element.classList.add('active');
     }
 </script>
-
-{{-- Script tambahan untuk animasi fade --}}
 <style>
     #service-title, #service-body {
         transition: opacity 0.3s ease-in-out;
