@@ -112,7 +112,7 @@
     <section id="services-featured">
         <h2 class="services-title">our services</h2>
 
-        <div class="featured-service-block">
+        <div class="featured-service-block"data-aos="fade-down"data-aos-easing="linear"data-aos-duration="1000">
             <p>
                 "Precision, Promptness, Power. Our services are calibrated to turn legal risks into strategic opportunities, 
                 delivering solutions that are swift, clear, and perfectly aligned with your objectives."
