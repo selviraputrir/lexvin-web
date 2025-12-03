@@ -32,7 +32,7 @@
             margin: 0;
             background-color: var(--background-color);
             font-family: var(--font-body);
-            scroll-behavior: smooth; /* PENTING: Agar scroll-nya halus */
+            scroll-behavior: smooth; 
         }
 
         .services-title {
