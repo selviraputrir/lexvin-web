@@ -9,21 +9,17 @@
 </head>
 <body class="bg-wine-red font-sans antialiased min-h-screen flex items-center justify-center">
 
-    <div class="w-full max-w-md px-6">
+    <div class="w-full max-w-sm px-6">
         
-        <div class="text-center mb-8">
-            <img src="{{ asset('images/logo.png') }}" 
+        <div class="text-center mb-6"> <img src="{{ asset('images/logo.png') }}" 
                  alt="LEXVIN Logo" 
-                 class="h-10 w-auto mx-auto mb-4">
-            
-            <p class="text-gold-accent text-sm uppercase tracking-widest">Admin Access Portal</p>
-        </div>
-        <div class="bg-ivory-white rounded-lg shadow-2xl p-8 border-t-4 border-[#B89B65]">
-            <h2 class="text-2xl font-serif font-bold text-[#451425] mb-6 text-center">Sign In</h2>
+                 class="h-8 w-auto mx-auto mb-3"> <p class="text-gold-accent text-[10px] uppercase tracking-widest">Admin Access Portal</p> </div>
+
+        <div class="bg-ivory-white rounded-lg shadow-2xl p-6 border-t-4 border-[#B89B65]">
+            <h2 class="text-xl font-serif font-bold text-[#451425] mb-5 text-center">Sign In</h2>
 
             @if ($errors->any())
-                <div class="alert alert-danger mb-4">
-                    <ul class="list-disc list-inside">
+                <div class="alert alert-danger mb-4 text-xs"> <ul class="list-disc list-inside">
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
                         @endforeach
@@ -34,25 +30,21 @@
             <form action="{{ route('admin.login.submit') }}" method="POST">
                 @csrf
                 
-                <div class="form-group">
-                    <label class="form-label">Email Address</label>
-                    <input type="email" name="email" class="form-input" value="{{ old('email') }}" required autofocus>
+                <div class="form-group mb-3"> <label class="form-label text-xs">Email Address</label> <input type="email" name="email" class="form-input text-sm py-2" value="{{ old('email') }}" required autofocus>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">Password</label>
-                    <input type="password" name="password" class="form-input" required>
+                <div class="form-group mb-4">
+                    <label class="form-label text-xs">Password</label>
+                    <input type="password" name="password" class="form-input text-sm py-2" required>
                 </div>
 
-                <button type="submit" class="btn w-full mt-4">
+                <button type="submit" class="btn w-full mt-2 py-2 text-sm uppercase tracking-wide">
                     Login to Dashboard
                 </button>
             </form>
         </div>
 
-        <p class="text-center text-gray-500 text-xs mt-8">
-            &copy; {{ date('Y') }} LEXVIN Law Firm. Authorized Personnel Only.
-        </p>
+       
     </div>
 
 </body>

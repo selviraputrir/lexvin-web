@@ -1,131 +1,201 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Inventra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#F3F4F6]">
 
-@section('title', 'Admin Dashboard - Incoming Messages')
+    <div class="flex h-screen overflow-hidden">
 
-@section('content')
+  @include('admin.navbar')
 
-    <nav class="bg-wine-red text-white px-6 py-4 flex justify-between items-center mb-8 rounded-lg shadow-md">
-        
-        <a href="/">
-            <img src="{{ asset('images/logo.png') }}" alt="LEXVIN" class="h-6 w-auto">
-        </a>
-        
-        <form action="{{ route('admin.logout') }}" method="POST" class="m-0">
-            @csrf
-            <button type="submit"
-                class="px-4 py-2 bg-red-700 hover:bg-red-800 text-white text-sm rounded transition duration-300 font-bold uppercase tracking-wide"
-                style="background-color: #b91c1c; border: none; cursor: pointer;">
-                Logout <i class="fas fa-sign-out-alt ml-1"></i>
-            </button>
-        </form>
-    </nav>
 
-    <div class="admin-container">
-        <div class="flex justify-between items-end mb-6">
-            <h1 class="admin-title" style="margin-bottom: 0;">Incoming Messages</h1>
-        </div>
+        <div class="flex-1 flex flex-col min-w-0">
+            
+            <header class="h-20 bg-white border-b border-gray-200 flex items-center justify-between px-8 z-10 sticky top-0">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-800">Dashboard</h1>
+                
+                </div>
 
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-3 pl-6 border-l border-gray-200">
+                        <div class="text-right hidden sm:block">
+                            <p class="text-sm font-bold text-gray-800">User Admin</p>
+                            <p class="text-xs text-gray-500">Super Admin</p>
+                        </div>
+                        <img src="/image/0.jpg" alt="User" class="w-10 h-10 rounded-full border-2 border-white shadow-sm ring-2 ring-gray-100">
+                    </div>
+                </div>
+            </header>
 
-        <div style="overflow-x: auto;">
-            <table class="message-table">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Name</th>
-                        <th>Email / Phone</th>
-                        <th>Message</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($messages as $message)
-                        <tr class="{{ $message->is_read ? '' : 'message-unread' }}">
+            <main class="flex-1 overflow-y-auto p-8 bg-[#F3F4F6]">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
-                            <td class="text-sm" style="min-width: 120px;">
-                                {{ $message->created_at->timezone('Asia/Jakarta')->format('d M Y') }}
-                                <br>
-                                <span class="text-gray-500 text-xs">
-                                    {{ $message->created_at->timezone('Asia/Jakarta')->format('H:i') }} WIB
-                                </span>
-                            </td>
+                    <a href="/messages" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-envelope-open-text"></i>
+                            </div>
+                            <span class="bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded-lg">New</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">Contact Messages</h3>
+                        <div class="flex justify-between items-end mt-2">
+                            <p class="text-sm text-gray-500">Inbox & Inquiries</p>
+                            <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-amber-600 group-hover:bg-amber-50 transition-colors">
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </div>
+                        </div>
+                    </a>
 
-                            <td class="font-bold">{{ $message->name }}</td>
+                    <a href="/regulatormobile" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">Mobile</h3>
+                        <div class="flex justify-between items-end mt-2">
+                            <p class="text-sm text-gray-500">Mobile Devices</p>
+                            <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-indigo-600 group-hover:bg-indigo-50 transition-colors">
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </div>
+                        </div>
+                    </a>
 
-                            <td class="text-sm">
-                                <div style="margin-bottom: 4px;">Email: <strong>{{ $message->email }}</strong></div>
+                    <a href="/regulatortab" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center text-xl group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-tablet-screen-button"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">Tablet</h3>
+                        <div class="flex justify-between items-end mt-2">
+                            <p class="text-sm text-gray-500">Tabs & iPads</p>
+                            <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-cyan-600 group-hover:bg-cyan-50 transition-colors">
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </div>
+                        </div>
+                    </a>
 
-                                @if ($message->phone)
-                                    @php
-                                        $cleanPhone = preg_replace('/[^0-9]/', '', $message->phone);
-                                        if (substr($cleanPhone, 0, 1) === '0') {
-                                            $cleanPhone = '62' . substr($cleanPhone, 1);
-                                        } elseif (substr($cleanPhone, 0, 2) !== '62') {
-                                            $cleanPhone = '62' . $cleanPhone;
-                                        }
-                                        $whatsappUrl = 'https://wa.me/' . $cleanPhone;
-                                    @endphp
-                                    <div class="font-semibold" style="color: #16a34a;">
-                                        Phone: <a href="{{ $whatsappUrl }}" target="_blank"
-                                            style="text-decoration: underline;">
-                                            {{ $message->phone }} (WA)
-                                        </a>
-                                    </div>
-                                @endif
-                            </td>
+                    <a href="/regulatorlaptop" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-laptop"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">Laptop</h3>
+                        <div class="flex justify-between items-end mt-2">
+                            <p class="text-sm text-gray-500">Portable Computers</p>
+                            <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-blue-600 group-hover:bg-blue-50 transition-colors">
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </div>
+                        </div>
+                    </a>
 
-                            <td class="message-content text-sm">
-                                {{ $message->message }}
-                            </td>
+                    <a href="/regulatorcamera" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">Camera</h3>
+                        <div class="flex justify-between items-end mt-2">
+                            <p class="text-sm text-gray-500">Photography Gear</p>
+                            <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-purple-600 group-hover:bg-purple-50 transition-colors">
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </div>
+                        </div>
+                    </a>
 
-                            <td>
-                                @if ($message->is_read)
-                                    <span
-                                        style="background-color: #e0f2fe; color: #0369a1; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold;">Read</span>
-                                @else
-                                    <span
-                                        style="background-color: #fef9c3; color: #854d0e; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold;">New</span>
-                                @endif
-                            </td>
+                    <a href="/regulatorgame" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl group-hover:bg-rose-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-gamepad"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">Gaming</h3>
+                        <div class="flex justify-between items-end mt-2">
+                            <p class="text-sm text-gray-500">Consoles & Acc</p>
+                            <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-rose-600 group-hover:bg-rose-50 transition-colors">
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </div>
+                        </div>
+                    </a>
 
-                            <td>
-                                <div style="display: flex; gap: 10px; flex-direction: column;">
-                                    @if (!$message->is_read)
-                                        <form action="{{ route('admin.message.read', $message->id) }}" method="POST">
-                                            @csrf
-                                            @method('PATCH')
-                                            <button type="submit" class="btn-mark-read"
-                                                style="color: #2563eb; background: none; border: none; cursor: pointer; font-size: 0.875rem; text-decoration: underline;">Mark
-                                                as Read</button>
-                                        </form>
-                                    @endif
+                    <a href="/regulatorcomputer" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-50 text-slate-600 flex items-center justify-center text-xl group-hover:bg-slate-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-desktop"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">Computer</h3>
+                        <div class="flex justify-between items-end mt-2">
+                            <p class="text-sm text-gray-500">Desktop & PC</p>
+                            <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-slate-600 group-hover:bg-slate-50 transition-colors">
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </div>
+                        </div>
+                    </a>
 
-                                    <form action="{{ route('admin.message.destroy', $message->id) }}" method="POST"
-                                        onsubmit="return confirm('Are you sure you want to delete this message?');">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn-delete"
-                                            style="color: #dc2626; background: none; border: none; cursor: pointer; font-size: 0.875rem;">Delete</button>
-                                    </form>
-                                </div>
-                            </td>
+                    <a href="/regulatorsmarttv" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center text-xl group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-tv"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">Smart TV</h3>
+                        <div class="flex justify-between items-end mt-2">
+                            <p class="text-sm text-gray-500">Home Entertainment</p>
+                            <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-orange-600 group-hover:bg-orange-50 transition-colors">
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </div>
+                        </div>
+                    </a>
 
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="6" class="message-empty"
-                                style="text-align: center; padding: 20px; color: #666;">
-                                No messages have been received yet.
-                            </td>
-                        </tr>
-                    @endforelse
-                </tbody>
-            </table>
+                    <a href="/regulatorsmartphone" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">Smartphone</h3>
+                        <div class="flex justify-between items-end mt-2">
+                            <p class="text-sm text-gray-500">Mobile Devices</p>
+                            <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-indigo-600 group-hover:bg-indigo-50 transition-colors">
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="/regulatorspeaker" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group block">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-yellow-50 text-yellow-600 flex items-center justify-center text-xl group-hover:bg-yellow-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800">Speaker</h3>
+                        <div class="flex justify-between items-end mt-2">
+                            <p class="text-sm text-gray-500">Audio Systems</p>
+                            <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-yellow-600 group-hover:bg-yellow-50 transition-colors">
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </main>
         </div>
     </div>
-@endsection
+
+</body>
+</html>

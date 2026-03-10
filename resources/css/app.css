@@ -244,5 +244,11 @@
         background-color: #fef2f2;
         border-color: #ef4444;
         color: #b91c1c;
+ 
     }
+    html {
+    scroll-behavior: smooth;
+    /* Sesuaikan angka 100px dengan tinggi header kamu */
+    scroll-padding-top: 100px; 
+}
 }

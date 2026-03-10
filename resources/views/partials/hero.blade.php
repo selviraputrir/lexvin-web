@@ -1,4 +1,4 @@
-<div class="bg-black pt-7 min-h-screen">
+<div class="bg-black pt-5 min-h-screen">
     <section id="home" class="relative container mx-auto" style="height: 80vh;">
 
         <div class="absolute inset-0 bg-center bg-no-repeat bg-cover rounded-xl"
@@ -15,17 +15,13 @@
                     <a class="" href="/">
                         <img src="{{ asset('images/logo.png') }}" alt="LEXVIN" class=" custom-margin-2 h-6 w-[200px]">
                     </a>
-
-
-                    <nav class="hidden items-center space-x-10 text-base font-serif md:flex ml-16 text-white">
-
-                        <a href="#home" class="nav-link hover:opacity-80">Home</a>
-                        <a href="#about" class="nav-link hover:opacity-80">About</a>
-                        <a href="#services" class="nav-link hover:opacity-80">Our Services</a>
-                        <a href="#testimonials" class="nav-link hover:opacity-80">Testimonials</a>
-
-                    </nav>
-
+    <nav class="hidden md:flex items-center space-x-8 text-sm font-serif ml-12 text-white whitespace-nowrap">
+    <a href="/#home" class="nav-link hover:opacity-80 transition">Home</a>
+    <a href="/#about" class="nav-link hover:opacity-80 transition">About</a>
+    <a href="/artikel" class="nav-link hover:opacity-80 transition">Artikel</a>
+    <a href="/#services" class="nav-link hover:opacity-80 transition">Our Services</a> 
+    <a href="/#testimonials" class="nav-link hover:opacity-80 transition">Testimonials</a>
+</nav>
                 </div>
 
                 <a href="{{ route('contact.create') }}"
@@ -65,11 +61,10 @@
                         class="absolute top-8 right-5 text-gray-900 text-3xl cursor-pointer hover:text-custom-wine">
                         <i class="fas fa-times"></i>
                     </label>
-                    <a href="/" class="nav-link text-gray-900 hover:text-custom-wine font-serif">Home</a>
-                    <a href="/#about" class="nav-link text-gray-900 hover:text-custom-wine font-serif">About</a>
-                    <a href="/#services" class="nav-link text-gray-900 hover:text-custom-wine font-serif">Services</a>
-                    <a href="/#testimonials"
-                        class="nav-link text-gray-900 hover:text-custom-wine font-serif">Testimonials</a>
+                    <a href="/home" class="nav-link text-gray-900 hover:text-custom-wine font-serif">Home</a>
+                    <a href="/about" class="nav-link text-gray-900 hover:text-custom-wine font-serif">About</a>
+                    <a href="/services" class="nav-link text-gray-900 hover:text-custom-wine font-serif">OurServices</a>
+                    <a href="/testimonials" class="nav-link text-gray-900 hover:text-custom-wine font-serif">Testimonials</a>
                     <a href="{{ route('contact.create') }}"
                         class="nav-link text-gray-900 hover:text-custom-wine font-serif font-bold">Contact Us</a>
                 </div>

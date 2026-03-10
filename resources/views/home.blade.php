@@ -5,6 +5,7 @@
         @include('partials.hero')
         @include('partials.about')
         @include('partials.services')
+          @include('partials.artikel')
         @include('partials.testimonials')
         @include('partials.whatsapp')
     </main>

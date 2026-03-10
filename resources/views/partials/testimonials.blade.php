@@ -22,7 +22,7 @@
     .testimonial-header {
         background: linear-gradient(135deg, #2b0c1f, #451425);
         color: #ffffff;
-        padding: 100px 20px 130px 20px;
+        padding: 100px 10px 130px 0px;
         text-align: center;
     }
     .testimonial-body {
@@ -38,6 +38,7 @@
     }
     .section-subtitle { font-size: 1rem; font-weight: 500; color: #ffffff; margin-bottom: 8px; text-transform: capitalize; }
     .section-title {
+        color: #B89B65;
         font-family: 'Merriweather', serif;
         font-size: 2.5rem;
         margin: 0 0 16px 0;
