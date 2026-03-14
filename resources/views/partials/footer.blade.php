@@ -2,7 +2,7 @@
     <div class="container mx-auto px-4 text-center">
         
         
-        <h2 class="text-4xl font-serif font-bold mb-4 tracking-wide text-white uppercase">Lexvin</h2>
+        <h2 class="text-4xl font-serif  mb-4 tracking-wide text-white uppercase">Lexvin</h2>
       
         <p class="text-gray-300 max-w-2xl mx-auto mb-8 text-sm leading-relaxed opacity-90">
             Providing innovative and practical legal solutions to protect and grow your business in the digital era. 

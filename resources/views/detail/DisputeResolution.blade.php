@@ -4,10 +4,10 @@
 <main class="bg-black min-h-screen font-sans text-white">
     {{-- Section Hero --}}
     <div class="bg-black pt-5">
-        <section id="home" class="relative container mx-auto" style="height: 55vh;">
-            <div class="absolute inset-0 bg-center bg-no-repeat bg-cover rounded-xl"
+        <section id="home" class="relative container mx-auto rounded-xl overflow-hidden" style="height: 55vh;">
+            <div class="absolute inset-0 bg-center bg-no-repeat bg-cover"
                 style="background-image: url('{{ asset('images/background-hero.jpg') }}');">
-                <div class="absolute inset-0 bg-black/50 rounded-xl"></div>
+                <div class="absolute inset-0 bg-black/50"></div>
             </div>
 
             <div class="relative z-10 flex flex-col h-full">
@@ -38,14 +38,14 @@
     <nav class="bg-[#D9D9D9] py-3 mt-4">
         <div class="container mx-auto px-6 text-black text-xs">
             <a href="/" class="opacity-60 hover:opacity-100">Home</a> / 
-            <span class="opacity-60">Corporate Action</span> / 
+            <span class="opacity-60">Dispute Resolution</span> / 
             <span class="font-bold text-[#441425]">Read More</span>
         </div>
     </nav>
 
     {{-- Main Content Section --}}
     <section class="container mx-auto px-6 py-16">
-        <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex flex-col lg:flex-row gap-12">
             
             {{-- Detail Text Card (Kiri) --}}
             <div class="lg:w-2/3">
@@ -61,8 +61,8 @@
 
                     <div class="flex flex-col h-full">
                         <div class="mb-8 pt-4 md:pt-0">
-                            <h1 class="text-white font-serif text-4xl md:text-5xl leading-[1.1] max-w-[70%]">
-                                Corporate<br>Action
+                            <h1 class="text-white font-serif  text-4xl md:text-5xl leading-[1.1] max-w-[70%]">
+                                Dispute<br>Resolution
                             </h1>
                         </div>
 
@@ -70,7 +70,7 @@
 
                         <div class="text-left">
                             <p class="text-gray-200 text-sm md:text-base leading-relaxed font-light opacity-90">
-                                Strategic assistance for major corporate actions such as Mergers, Acquisitions, Consolidations, Separations, and more. Ensuring that major company transaction activities do not violate laws or prevailing societal norms.
+                                Comprehensive assistance in resolving business disputes through both litigation (Court) and non-litigation (out-of-court) channels. We focus on providing legal protection and the best strategic solutions to safeguard your company's reputation and operational continuity.
                             </p>
                         </div>
                     </div>
@@ -78,19 +78,19 @@
             </div>
 
             {{-- Sidebar Cards (Kanan) --}}
-            <div class="lg:w-1/3 flex flex-col gap-4">
-  
-                <a href="{{ route('detail.DisputeResolution') }}" 
-                   class="bg-gradient-to-br from-[#441425] to-[#2B0C1F] p-5 rounded-2xl border border-[#B89B65]/20 flex gap-4 group hover:border-[#B89B65] hover:-translate-y-1 transition-all duration-300">
-                    <div class="text-[#B89B65] bg-[#B89B65]/10 w-12 h-12 rounded-xl flex items-center justify-center group-hover:bg-[#B89B65] group-hover:text-black transition-colors shrink-0">
-                        <i class="fa-solid fa-handshake text-lg"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h4 class="text-white font-serif font-bold text-[11px] tracking-widest mb-1 group-hover:text-[#B89B65] transition-colors uppercase">Dispute Resolution</h4>
-                        <p class="text-[10px] text-gray-400 leading-snug">Ongoing legal services for companies that need long-term legal partners.</p>
-                    </div>
-                </a>
-
+            {{-- Sidebar Cards --}}
+        <div class="lg:w-1/3 flex flex-col gap-4">
+            {{-- Corporate Actions --}}
+            <a href="{{ route('detail.corporateactions') }}" 
+               class="bg-gradient-to-br from-[#441425] to-[#2B0C1F] p-5 rounded-2xl border border-[#B89B65]/20 flex gap-4 group hover:border-[#B89B65] hover:-translate-y-1 transition-all duration-300">
+                <div class="text-[#B89B65] bg-[#B89B65]/10 w-12 h-12 rounded-xl flex items-center justify-center group-hover:bg-[#B89B65] group-hover:text-black transition-colors">
+                    <i class="fa-solid fa-building-shield text-lg"></i>
+                </div>
+                <div class="flex-1">
+                    <h4 class="text-white font-serif font-bold text-[11px] tracking-widest mb-1 group-hover:text-[#B89B65] transition-colors uppercase">Corporate Actions</h4>
+                    <p class="text-[10px] text-gray-400 leading-snug">Assistance in mergers, acquisitions, and business separations.</p>
+                </div>
+            </a>
                 {{-- Legal Consultant Sidebar --}}
                 <a href="{{ route('detail.legalconsultant') }}" 
                    class="bg-gradient-to-br from-[#441425] to-[#2B0C1F] p-5 rounded-2xl border border-[#B89B65]/20 flex gap-4 group hover:border-[#B89B65] hover:-translate-y-1 transition-all duration-300">
@@ -102,9 +102,9 @@
                         <p class="text-[10px] text-gray-400 leading-snug">Strategic consulting sessions to address business and personal legal needs.</p>
                     </div>
                 </a>
-            </div> {{-- End Sidebar --}}
+            </div>
 
-        </div> {{-- End Flex Row --}}
+        </div>
     </section>
 </main>
 

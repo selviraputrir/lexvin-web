@@ -57,19 +57,15 @@ Route::get('/detail/legal-consultant', function () {
 })->name('detail.legalconsultant');
 
 // Route untuk Corporate Legal Retainer
-Route::get('/detail/corporate-legal-retainer', function () {
-    return view('detail.corporatelegalretainer');
-})->name('detail.corporatelegalretainer');
+Route::get('/detail/Dispute-Resolution', function () {
+    return view('detail.DisputeResolution');
+})->name('detail.DisputeResolution');
 
 // Route untuk Corporate Actions
 Route::get('/detail/corporate-actions', function () {
     return view('detail.corporateactions');
 })->name('detail.corporateactions');
 
-// Route untuk Litigation Support
-Route::get('/detail/litigation-support', function () {
-    return view('detail.litigationsupport');
-})->name('detail.litigationsupport');
 
 Route::get('/detail/artikel', function () {
     return view('detail/artikel'); // Gunakan titik (.) sebagai pengganti slash (/)

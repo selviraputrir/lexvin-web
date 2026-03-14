@@ -41,97 +41,79 @@
     </section>
 
     {{-- Breadcrumbs --}}
-    <nav class="bg-[#D9D9D9] py-3 mt-4">
-        <div class="container mx-auto px-6 text-black text-xs">
-            <a href="/" class="opacity-60 hover:opacity-100">Home</a> / 
-            <span class="opacity-60">Legal Consultant</span> / 
-            <span class="font-bold text-[#441425]">Selengkapnya</span>
-        </div>
-    </nav>
+<nav class="bg-[#D9D9D9] py-3 mt-4">
+    <div class="container mx-auto px-6 text-black text-xs">
+        <a href="/" class="opacity-60 hover:opacity-100">Home</a> / 
+        <span class="opacity-60">Legal Compliance</span> / 
+        <span class="font-bold text-[#441425]">Read More</span>
+    </div>
+</nav>
 
-    {{-- Main Content --}}
-    <section class="container mx-auto px-6 py-16">
-        <div class="flex flex-col lg:flex-row gap-16">
-            
-            {{-- Detail Text --}}
-            <div class="lg:w-2/3">
-                <div class="mb-8">
-                 
-             
-   <h1 class="text-3xl font-serif font-bold -[0.2em] mb-2">
-                       Legal Consultant
-</h1>
-
-<div class="flex gap-1">
-                        <div class="h-1 w-32 bg-[#B89B65]"></div>
-                        <div class="h-1 w-4 bg-[#B89B65]"></div>
-                        <div class="h-1 w-2 bg-[#B89B65]"></div>
+{{-- Main Content --}}
+<section class="container mx-auto px-6 py-16">
+    <div class="flex flex-col lg:flex-row gap-16">
+        
+        {{-- Detail Text Card --}}
+        <div class="lg:w-2/3">
+            <div class="relative bg-gradient-to-b from-[#441425] to-[#2B0C1F] rounded-2xl p-8 md:p-12 shadow-2xl border border-white/5 overflow-hidden h-full">
+                
+                {{-- Free Consultation Ribbon --}}
+                <div class="absolute top-8 right-[-8px] z-10">
+                    <div class="relative bg-[#B89B65] text-white text-[10px] md:text-xs font-bold py-2 px-6 pr-10 rounded-l-lg shadow-lg uppercase tracking-widest">
+                        Free Consultation
+                        <div class="absolute right-0 top-full w-2 h-2 bg-[#8a744b] [clip-path:polygon(0_0,0_100%,100%_0)]"></div>
                     </div>
                 </div>
 
-                <div class="space-y-6 text-gray-300 leading-relaxed text-sm md:text-base">
-                    <p>
-                        Strategic consulting sessions to address both business and personal legal needs. This is an initial or gateway service for clients. Anyone (whether on behalf of an individual or a company) with legal questions, concerns, or concerns can schedule a private session with an attorney.
-                    </p>
-                    <p>In this session, the client will explain their situation, and the attorney will:</p>
-                    <ul class="space-y-3 list-none">
-                        <li class="flex gap-3">
-                            <span class="text-[#B89B65] font-bold">*</span>
-                            <span><strong>Analyze the Problem:</strong> Identify the core legal issues they face.</span>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="text-[#B89B65] font-bold">*</span>
-                            <span><strong>Provide Legal Advice:</strong> Explain the client's legal position, rights, and obligations.</span>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="text-[#B89B65] font-bold">*</span>
-                            <span><strong>Develop a Strategy:</strong> Provide recommendations on strategic steps to take, potential risks, and the most effective solutions.</span>
-                        </li>
-                    </ul>
-                    <p>
-                        This service can be used for a variety of matters, from inheritance or prenuptial agreements (personal) to simple contract disputes or business establishments.
-                    </p>
+                <div class="flex flex-col h-full">
+                    {{-- Title --}}
+                    <div class="mb-8 pt-4 md:pt-0">
+                        <h1 class="text-white font-serif  text-4xl md:text-5xl leading-[1.1] max-w-[70%] text-left">
+                            Legal<br>Compliance
+                        </h1>
+                    </div>
+
+                    {{-- Divider --}}
+                    <div class="w-full h-[1px] bg-white/20 mb-10"></div>
+
+                    {{-- Description --}}
+                    <div class="text-left">
+                        <p class="text-gray-200 text-sm md:text-base leading-relaxed font-light opacity-90">
+                            Management of business legal compliance, ranging from the governance of establishing strategic corporate entities and handling legal administration, to ensuring fulfillment of specific regulatory compliance for various corporate business activities.
+                        </p>
+                    </div>
                 </div>
             </div>
+        </div>
 
+        {{-- Sidebar Cards --}}
+        <div class="lg:w-1/3 flex flex-col gap-4">
+            {{-- Corporate Actions --}}
+            <a href="{{ route('detail.corporateactions') }}" 
+               class="bg-gradient-to-br from-[#441425] to-[#2B0C1F] p-5 rounded-2xl border border-[#B89B65]/20 flex gap-4 group hover:border-[#B89B65] hover:-translate-y-1 transition-all duration-300">
+                <div class="text-[#B89B65] bg-[#B89B65]/10 w-12 h-12 rounded-xl flex items-center justify-center group-hover:bg-[#B89B65] group-hover:text-black transition-colors">
+                    <i class="fa-solid fa-building-shield text-lg"></i>
+                </div>
+                <div class="flex-1">
+                    <h4 class="text-white font-serif font-bold text-[11px] tracking-widest mb-1 group-hover:text-[#B89B65] transition-colors uppercase">Corporate Actions</h4>
+                    <p class="text-[10px] text-gray-400 leading-snug">Assistance in mergers, acquisitions, and business separations.</p>
+                </div>
+            </a>
+  {{-- Dispute Resolution Sidebar --}}
+                <a href="{{ route('detail.DisputeResolution') }}" 
+                   class="bg-gradient-to-br from-[#441425] to-[#2B0C1F] p-5 rounded-2xl border border-[#B89B65]/20 flex gap-4 group hover:border-[#B89B65] hover:-translate-y-1 transition-all duration-300">
+                    <div class="text-[#B89B65] bg-[#B89B65]/10 w-12 h-12 rounded-xl flex items-center justify-center group-hover:bg-[#B89B65] group-hover:text-black transition-colors shrink-0">
+                        <i class="fa-solid fa-handshake text-lg"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="text-white font-serif font-bold text-[11px] tracking-widest mb-1 group-hover:text-[#B89B65] transition-colors uppercase">Dispute Resolution</h4>
+                        <p class="text-[10px] text-gray-400 leading-snug">Ongoing legal services for companies that need long-term legal partners.</p>
+                    </div>
+                </a>
+    
           {{-- Sidebar Cards Container --}}
-<div class="lg:w-1/3 flex flex-col gap-4">
+
   
-    {{-- Corporate Actions --}}
-    <a href="{{ route('detail.corporateactions') }}" 
-       class="bg-gradient-to-br from-[#441425] to-[#2B0C1F] p-5 rounded-2xl border border-[#B89B65]/20 flex gap-4 group hover:border-[#B89B65] hover:-translate-y-1 transition-all duration-300">
-        <div class="text-[#B89B65] bg-[#B89B65]/10 w-12 h-12 rounded-xl flex items-center justify-center group-hover:bg-[#B89B65] group-hover:text-black transition-colors">
-            <i class="fa-solid fa-building-shield text-lg"></i>
-        </div>
-        <div class="flex-1">
-            <h4 class="text-white font-serif font-bold  text-[11px] tracking-widest mb-1 group-hover:text-[#B89B65] transition-colors">Corporate Actions</h4>
-            <p class="text-[10px] text-gray-400 leading-snug">Assistance in mergers, acquisitions, and business separations.</p>
-        </div>
-    </a>
-
-    {{-- Corporate Legal Retainer --}}
-    <a href="{{ route('detail.corporatelegalretainer') }}" 
-       class="bg-gradient-to-br from-[#441425] to-[#2B0C1F] p-5 rounded-2xl border border-[#B89B65]/20 flex gap-4 group hover:border-[#B89B65] hover:-translate-y-1 transition-all duration-300">
-        <div class="text-[#B89B65] bg-[#B89B65]/10 w-12 h-12 rounded-xl flex items-center justify-center group-hover:bg-[#B89B65] group-hover:text-black transition-colors">
-            <i class="fa-solid fa-handshake text-lg"></i>
-        </div>
-        <div class="flex-1">
-            <h4 class="text-white font-serif font-bold  text-[11px] tracking-widest mb-1 group-hover:text-[#B89B65] transition-colors">Corporate Legal Retainer</h4>
-            <p class="text-[10px] text-gray-400 leading-snug"> Ongoing legal services for companies that need long-term legal partners.</p>
-        </div>
-    </a>
-
-    {{-- Litigation Support --}}
-    <a href="{{ route('detail.litigationsupport') }}" 
-       class="bg-gradient-to-br from-[#441425] to-[#2B0C1F] p-5 rounded-2xl border border-[#B89B65]/20 flex gap-4 group hover:border-[#B89B65] hover:-translate-y-1 transition-all duration-300">
-        <div class="text-[#B89B65] bg-[#B89B65]/10 w-12 h-12 rounded-xl flex items-center justify-center group-hover:bg-[#B89B65] group-hover:text-black transition-colors">
-            <i class="fa-solid fa-gavel text-lg"></i>
-        </div>
-        <div class="flex-1">
-            <h4 class="text-white font-serif font-bold text-[11px] tracking-widest mb-1 group-hover:text-[#B89B65] transition-colors">Litigation Support</h4>
-            <p class="text-[10px] text-gray-400 leading-snug">Experts ready to defend and accompany clients in court.</p>
-        </div>
-    </a>
 
 </div>
     </section>

@@ -1,32 +1,66 @@
-<section id="about" class="bg-white py-24 md:py-32 overflow-hidden"> 
-    <div class="container mx-auto flex flex-col items-center gap-8 px-6 md:flex-row lg:gap-12">
-
-        <div class="w-full md:w-1/3" data-aos="fade-right" data-aos-duration="1000">
-            <div class="relative">
-                <div class="absolute top-6 left-6 h-full w-full bg-wine-red"></div>
-                <img src="{{ asset('images/foto.jpeg') }}" alt="Founding Partner" class="relative z-10 w-full shadow-md">
-            </div>
-        </div>
-
-        <div class="w-full md:w-2/3" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
-            <p class="text-xs font-bold uppercase tracking-wider text-gold-accent">About Us</p>
-            <h2 class="font-serif font-sans text-2xl font-semibold text-black my-2 md:text-3xl">
-                Welcome to Lexvin Legal Advisory
+<section id="about" class="bg-white py-16 overflow-hidden"> {{-- Padding ditingkatkan sedikit --}}
+    <div class="container mx-auto px-6 max-w-5xl"> {{-- Container diperlebar kembali ke 5xl --}}
+        
+        {{-- Judul Section: FOUNDING PARTNER --}}
+        <div class="flex flex-col items-center mb-12" data-aos="fade-up"> {{-- Jarak judul sedikit lebih lega (mb-12) --}}
+            <h2 class="text-3xl md:text-4xl font-serif tracking-[0.2em] text-black text-center uppercase">
+                Founding Partner
             </h2>
-            
-            <div class="space-y-3 text-black text-sm leading-relaxed text-justify">
-                <p>
-                    Vincentio, the Founder of Lexvin Legal Advisory, is a certified Corporate Legal Expert with a formal background in law. His expertise in business and corporate law drives his commitment to providing services that not only protect client interests but also ensure their ventures are secure and grow in accordance with established regulations.
-                </p>
-                <p>
-                    He is an expert with extensive experience in guiding business negotiations and transactions, reviewing and drafting contracts, and overseeing restructuring actions such as mergers, acquisitions, and corporate separations. An elegant, confidential, and strategic approach is the hallmark of every service he provides.
-                </p>
-            </div>
-
-            <div class="mt-5">
-                <p class="font-serif text-2xl italic text-gold-accent">Vincentio Mardana</p>
-            </div>
+            <div class="w-20 h-[1px] bg-[#441425] mt-3 opacity-30"></div>
         </div>
 
+        <div class="flex flex-col gap-14"> {{-- Jarak antar profil ditingkatkan sedikit --}}
+            
+            {{-- Profile 1: Dr. Rizal Syamsul Ma'arif --}}
+            <div class="flex flex-col md:flex-row items-center gap-10" data-aos="fade-left" data-aos-duration="1000">
+                {{-- Ukuran lingkaran sedikit diperbesar --}}
+                <div class="w-36 h-36 md:w-44 md:h-44 flex-shrink-0 relative">
+                    <div class="absolute inset-0 rounded-full border-[3px] border-[#441425] shadow-lg overflow-hidden">
+                        <img src="{{ asset('images/a.jpeg') }}" alt="Dr. Rizal Syamsul Ma'arif" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <div class="flex-1 text-center md:text-left">
+                    <h3 class="text-[#441425] font-bold text-xl md:text-2xl">Dr. Rizal Syamsul Ma'arif, S.H., M.H</h3>
+                    <p class="text-[#008080] font-medium text-xs md:text-sm uppercase tracking-widest mb-2">Counselor At Law</p>
+                    
+                    <div class="space-y-3"> {{-- Spasi antar paragraf sedikit lebih lega --}}
+                        <p class="text-gray-700 text-sm md:text-base leading-relaxed">
+                            Praktisi dan Pakar hukum dalam penanganan kasus sengketa pidana korporasi serta perdata komersial. Fokus pada strategi pembelaan taktis dan analisis terhadap risiko hukum yang kompleks.
+                        </p>
+                        <div class="w-full h-[1px] bg-gray-200 my-2"></div>
+                        <p class="text-gray-500 text-xs md:text-sm italic leading-relaxed">
+                            Practising and legal experts in handling corporate criminal disputes and commercial civil. Focus on tactical Defence strategies and analysis of complex legal risks.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Profile 2: Vincentio --}}
+            <div class="flex flex-col md:flex-row-reverse items-center gap-10" data-aos="fade-right" data-aos-duration="1000">
+                {{-- Ukuran lingkaran sedikit diperbesar --}}
+                <div class="w-36 h-36 md:w-44 md:h-44 flex-shrink-0 relative">
+                    <div class="absolute inset-0 rounded-full border-[3px] border-[#441425] shadow-lg overflow-hidden">
+                        <img src="{{ asset('images/b.jpeg') }}" alt="Vincentio" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <div class="flex-1 text-center md:text-left">
+                    <h3 class="text-[#441425] font-bold text-xl md:text-2xl">Vincentio, S.H., (Cand) C.CLE</h3>
+                    <p class="text-[#008080] font-medium text-xs md:text-sm uppercase tracking-widest mb-2">Counselor At Law</p>
+                    
+                    <div class="space-y-3">
+                        <p class="text-gray-700 text-sm md:text-base leading-relaxed">
+                            Praktisi hukum spesialis restrukturisasi perusahaan dan negosiasi kontrak transaksi tingkat tinggi (M&A). Berfokus pada penguatan struktur kepatuhan hukum (Compliance) serta keamanan dan pertumbuhan perusahaan.
+                        </p>
+                        <div class="w-full h-[1px] bg-gray-200 my-2"></div>
+                        <p class="text-gray-500 text-xs md:text-sm italic leading-relaxed">
+                            Legal practitioners specialising in corporate restructuring and high-level transaction contract (M&A) negotiation. Focussing on strengthening the legal compliance structure as well as the security and growth of the company.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </section>

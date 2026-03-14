@@ -7,8 +7,10 @@
             </h2>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        {{-- Penambahan class 'justify-center' agar 3 kartu ini berkumpul di tengah --}}
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center gap-6 max-w-5xl mx-auto">
             
+            {{-- Legal Consultant --}}
             <div class="bg-gradient-to-b from-[#441425] to-[#2B0C1F] rounded-2xl p-6 text-center shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between border border-white/5 w-full group">
                 <div>
                     <div class="mb-5 flex justify-center">
@@ -16,16 +18,17 @@
                             <i class="fa-solid fa-scale-balanced text-lg text-white"></i> 
                         </div>
                     </div>
-                    <h3 class="text-white font-serif font-bold text-sm mb-2  tracking-wide leading-tight">Legal Consultant</h3>
+                    <h3 class="text-white font-serif font-bold text-sm mb-2 tracking-wide leading-tight">Legal Consultant</h3>
                     <p class="text-gray-400 text-[11px] leading-relaxed mb-6 font-light">
                         Strategic consulting sessions to address business and personal legal needs.
                     </p>
                 </div>
-              <a href="{{ route('detail.legalconsultant') }}" class="bg-[#B89B65] text-black font-bold py-2 px-4 rounded-full text-[9px] uppercase tracking-wider hover:bg-white transition shadow-lg">
+                <a href="{{ route('detail.legalconsultant') }}" class="bg-[#B89B65] text-black font-bold py-2 px-4 rounded-full text-[9px] uppercase tracking-wider hover:bg-white transition shadow-lg">
                     Learn More
                 </a>
             </div>
 
+            {{-- Dispute Resolution --}}
             <div class="bg-gradient-to-b from-[#441425] to-[#2B0C1F] rounded-2xl p-6 text-center shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between border border-white/5 w-full group">
                 <div>
                     <div class="mb-5 flex justify-center">
@@ -33,16 +36,17 @@
                             <i class="fa-solid fa-handshake text-lg text-white"></i> 
                         </div>
                     </div>
-                    <h3 class="text-white font-serif font-bold text-sm mb-2  tracking-wide leading-tight">Corporate Legal Retainer</h3>
+                    <h3 class="text-white font-serif font-bold text-sm mb-2 tracking-wide leading-tight">Dispute Resolution</h3>
                     <p class="text-gray-400 text-[11px] leading-relaxed mb-6 font-light">
                         Ongoing legal services for companies that need long-term legal partners.
                     </p>
                 </div>
-                <a href="{{ route('detail.corporatelegalretainer') }}" class="bg-[#B89B65] text-black font-bold py-2 px-4 rounded-full text-[9px] uppercase tracking-wider hover:bg-white transition shadow-lg">
+                <a href="{{ route('detail.DisputeResolution') }}" class="bg-[#B89B65] text-black font-bold py-2 px-4 rounded-full text-[9px] uppercase tracking-wider hover:bg-white transition shadow-lg">
                     Learn More
                 </a>
             </div>
 
+            {{-- Corporate Actions --}}
             <div class="bg-gradient-to-b from-[#441425] to-[#2B0C1F] rounded-2xl p-6 text-center shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between border border-white/5 w-full group">
                 <div>
                     <div class="mb-5 flex justify-center">
@@ -50,29 +54,12 @@
                             <i class="fa-solid fa-building-shield text-lg text-white"></i> 
                         </div>
                     </div>
-                    <h3 class="text-white font-serif font-bold text-sm mb-2  tracking-wide leading-tight">Corporate Actions</h3>
+                    <h3 class="text-white font-serif font-bold text-sm mb-2 tracking-wide leading-tight">Corporate Actions</h3>
                     <p class="text-gray-400 text-[11px] leading-relaxed mb-6 font-light">
-                        Assistance in mergers, acquisitions, consolidations, and business separations.
+                        Strategic assistance for major corporate actions such as Mergers, Acquisitions, and more.
                     </p>
                 </div>
                 <a href="{{ route('detail.corporateactions') }}" class="bg-[#B89B65] text-black font-bold py-2 px-4 rounded-full text-[9px] uppercase tracking-wider hover:bg-white transition shadow-lg">
-                    Learn More
-                </a>
-            </div>
-
-            <div class="bg-gradient-to-b from-[#441425] to-[#2B0C1F] rounded-2xl p-6 text-center shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between border border-white/5 w-full group">
-                <div>
-                    <div class="mb-5 flex justify-center">
-                        <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center border border-white/10 group-hover:border-[#B89B65]/40 transition-all">
-                            <i class="fa-solid fa-gavel text-lg text-white"></i> 
-                        </div>
-                    </div>
-                    <h3 class="text-white font-serif font-bold text-sm mb-2  tracking-wide leading-tight">Litigation Support</h3>
-                    <p class="text-gray-400 text-[11px] leading-relaxed mb-6 font-light">
-                        A team of litigation experts ready to defend and accompany clients in court.
-                    </p>
-                </div>
-                <a href="{{ route('detail.litigationsupport') }}" class="bg-[#B89B65] text-black font-bold py-2 px-4 rounded-full text-[9px] uppercase tracking-wider hover:bg-white transition shadow-lg">
                     Learn More
                 </a>
             </div>
