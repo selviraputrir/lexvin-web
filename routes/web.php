@@ -1,72 +1,136 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Models\Pos;
+use App\Models\Testimonial;
 use App\Http\Controllers\ContactFormController;
-use App\Http\Controllers\Admin\DashboardController; 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
 
-
-Route::get('/artikel', function () { return view('detail/artikel'); });
-
-
-Route::delete('/contact/{id}', [ContactController::class, 'destroy'])->name('contact.destroy');
-
-Route::post('/contact', [ContactController::class, 'store'])->name('contact');
-
-
-Route::get('/messages', [ContactController::class, 'index'])->name('messages.index');
-
-
+/*
+|--------------------------------------------------------------------------
+| 1. HALAMAN DEPAN (PUBLIC)
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/', function () {
-    return view('welcome'); // atau view lain yang ingin kamu tampilkan
+    $berita_terbaru = Pos::orderBy('id', 'desc')->take(4)->get();
+    $testimonials = Testimonial::orderBy('id', 'desc')->get();
+    return view('home', compact('berita_terbaru', 'testimonials'));
 });
-Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/artikel', function () {
+    $semua_pos = Pos::orderBy('id', 'desc')->get();
+    return view('detail.artikel', compact('semua_pos'));
+})->name('detail.artikel');
+
+Route::get('/artikel/{id}', function ($id) {
+    $pos = Pos::findOrFail($id);
+    return view('detail.show', compact('pos'));
+})->name('artikel.show');
+
+Route::get('/detail/legal-consultant', function () { return view('detail.legalconsultant'); })->name('detail.legalconsultant');
+Route::get('/detail/Dispute-Resolution', function () { return view('detail.DisputeResolution'); })->name('detail.DisputeResolution');
+Route::get('/detail/corporate-actions', function () { return view('detail.corporateactions'); })->name('detail.corporateactions');
 
 Route::get('/hubungi-kami', [ContactFormController::class, 'create'])->name('contact.create');
 Route::post('/hubungi-kami', [ContactFormController::class, 'store'])->name('contact.store');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact');
+
+/*
+|--------------------------------------------------------------------------
+| 2. LOGIN ADMIN
+|--------------------------------------------------------------------------
+*/
 
 Route::middleware('guest')->group(function () {
     Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
     Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
 });
 
+/*
+|--------------------------------------------------------------------------
+| 3. AREA ADMIN (WAJIB LOGIN) - SATU GRUP SAJA
+|--------------------------------------------------------------------------
+*/
+
 Route::middleware('auth')->prefix('admin')->group(function () {
-    
-    Route::get('/', function () {
-        return redirect()->route('admin.dashboard');
-    });
 
+    // Dashboard & Logout
+    Route::get('/', function () { return redirect()->route('admin.dashboard'); });
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
-    
-    Route::get('/messages', [DashboardController::class, 'index'])->name('admin.messages.index'); 
-    Route::delete('/messages/{id}', [DashboardController::class, 'destroy'])->name('admin.message.destroy');
-    Route::patch('/messages/{id}/read', [DashboardController::class, 'markAsRead'])->name('admin.message.read');
-
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
+    // Manajemen Pesan Masuk
+    Route::get('/messages', [DashboardController::class, 'index'])->name('admin.messages.index');
+    Route::delete('/messages/{id}', [DashboardController::class, 'destroy'])->name('admin.message.destroy');
+    Route::patch('/messages/{id}/read', [DashboardController::class, 'read'])->name('admin.message.read');
 
+    // FITUR POS (BLOG/NEWS)
+    Route::get('/pos', function () {
+        $semua_pos = Pos::orderBy('id', 'desc')->get();
+        return view('admin.pos.index', compact('semua_pos'));
+    })->name('admin.pos.index');
 
-});
+    Route::get('/pos/create', function () { return view('admin.pos.create'); })->name('admin.pos.create');
 
-   // Route untuk Legal Consultant
-Route::get('/detail/legal-consultant', function () {
-    return view('detail.legalconsultant');
-})->name('detail.legalconsultant');
+    Route::post('/pos', function (Request $request) {
+        $nama_foto = null;
+        if ($request->hasFile('foto')) {
+            $nama_foto = time() . '.' . $request->foto->extension();
+            $request->foto->move(public_path('uploads'), $nama_foto);
+        }
+        Pos::create([
+            'judul' => $request->judul,
+            'isi_pos' => $request->isi_pos,
+            'foto' => $nama_foto
+        ]);
+        return redirect()->route('admin.pos.index');
+    })->name('admin.pos.store');
 
-// Route untuk Corporate Legal Retainer
-Route::get('/detail/Dispute-Resolution', function () {
-    return view('detail.DisputeResolution');
-})->name('detail.DisputeResolution');
+    // FITUR TESTIMONIAL
+    Route::get('/testimonial', function () {
+        // Ambil data testimonial dari database
+        $testimonials = \App\Models\Testimonial::orderBy('id', 'desc')->get();
+        // Tampilkan view index testimonial
+        return view('admin.testimonial.index', compact('testimonials'));
+    })->name('admin.testimonial.index');
 
-// Route untuk Corporate Actions
-Route::get('/detail/corporate-actions', function () {
-    return view('detail.corporateactions');
-})->name('detail.corporateactions');
+    Route::get('/testimonial/create', function () {
+        return view('admin.testimonial.create');
+    })->name('admin.testimonial.create');
 
+    Route::post('/testimonial', function (Request $request) {
+        $request->validate(['nama' => 'required', 'pesan' => 'required']);
+        Testimonial::create([
+            'nama' => $request->nama,
+            'jabatan' => $request->jabatan,
+            'pesan' => $request->pesan,
+        ]);
+        return redirect()->route('admin.testimonial.index')->with('success', 'Testimonial berhasil ditambah!');
+    })->name('admin.testimonial.store');
 
-Route::get('/detail/artikel', function () {
-    return view('detail/artikel'); // Gunakan titik (.) sebagai pengganti slash (/)
-})->name('detail.artikel');
+  Route::get('/testimonial/hapus/{id}', function ($id) {
+    \App\Models\Testimonial::findOrFail($id)->delete();
+    return redirect()->route('admin.testimonial.index');
+})->name('admin.testimonial.destroy');
+// 1. Munculin form edit
+Route::get('/testimonial/edit/{id}', function ($id) {
+    $testi = \App\Models\Testimonial::findOrFail($id);
+    return view('admin.testimonial.edit', compact('testi'));
+})->name('admin.testimonial.edit');
+
+// 2. Proses simpan perubahannya
+Route::post('/testimonial/update/{id}', function (Request $request, $id) {
+    $testi = \App\Models\Testimonial::findOrFail($id);
+    $testi->update([
+        'nama' => $request->nama,
+        'jabatan' => $request->jabatan,
+        'pesan' => $request->pesan,
+    ]);
+    return redirect()->route('admin.testimonial.index')->with('success', 'Testimonial berhasil diupdate!');
+})->name('admin.testimonial.update');
+}); 

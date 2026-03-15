@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\ContactMessage; // Model untuk mengambil data
+use App\Models\Contact; // Model untuk mengambil data
 
 class DashboardController extends Controller
 {
@@ -14,10 +14,10 @@ class DashboardController extends Controller
     public function index()
     {
         // Ambil semua pesan, urutkan dari yang terbaru
-        $messages = ContactMessage::orderBy('created_at', 'desc')->get();
+        $messages = Contact::orderBy('created_at', 'desc')->get();
 
         // Tampilkan view dan kirim data $messages ke dalamnya
-        return view('admin.dashboard', compact('messages'));
+        return view('admin.messages', compact('messages'));
     }
 
     /**
@@ -25,7 +25,7 @@ class DashboardController extends Controller
      */
     public function markAsRead($id)
     {
-        $message = ContactMessage::findOrFail($id);
+        $message = Contact::findOrFail($id);
         $message->update(['is_read' => true]);
 
         return redirect()->route('admin.dashboard')->with('success', 'Pesan ditandai sudah dibaca.');
@@ -36,7 +36,7 @@ class DashboardController extends Controller
      */
     public function destroy($id)
     {
-        $message = ContactMessage::findOrFail($id);
+        $message = Contact::findOrFail($id);
         $message->delete();
 
         return redirect()->route('admin.dashboard')->with('success', 'Pesan berhasil dihapus.');

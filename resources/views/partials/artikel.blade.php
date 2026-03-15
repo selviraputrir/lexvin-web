@@ -1,62 +1,136 @@
-<section class="bg-gray-50 py-12">
-    <div class="container mx-auto px-4 max-w-6xl">
-        <div class="flex justify-between items-center mb-8 border-b-2 border-[#411831] pb-4">
-            <h2 class="text-3xl font-serif font-bold text-slate-900">News</h2>
-           <a href="{{ route('detail.artikel') }}" class="bg-gradient-to-b from-[#441425] to-[#2B0C1F] text-white px-5 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-slate-900 transition">
-                in full 
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+<style>
+    .news-wrapper {
+        padding: 80px 0; 
+        background-color: #ffffff;
+    }
+
+    .news-container {
+        max-width: 1200px; 
+        margin: 0 auto;   
+        padding: 0 20px;   
+    }
+
+    .news-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #3b1b25;
+        padding-bottom: 15px;
+        margin-bottom: 40px;
+    }
+
+    .news-title {
+        font-family: 'Times New Roman', serif;
+        font-size: 32px;
+        font-weight: bold;
+        color: #1a252f;
+        margin: 0;
+    }
+
+    .btn-full {
+        background-color: #3b1b25;
+        color: white !important;
+        text-decoration: none;
+        padding: 8px 25px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .btn-full:hover {
+        background-color: #5a2a38;
+        transform: translateY(-2px);
+    }
+
+    .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+        gap: 30px;
+    }
+
+    .news-card {
+        text-decoration: none;
+        color: inherit;
+        transition: 0.3s;
+    }
+
+    .news-card:hover {
+        opacity: 0.9;
+    }
+
+    .news-img-box {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        margin-bottom: 15px;
+        background-color: #f8f9fa;
+    }
+
+    .news-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .news-label {
+        color: #0066cc;
+        font-size: 11px;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+    }
+
+    .news-text-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #111;
+        line-height: 1.4;
+        margin-bottom: 10px;
+        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .news-date {
+        font-size: 13px;
+        color: #777;
+    }
+</style>
+
+<section class="news-wrapper">
+    <div class="news-container">
+        
+        <div class="news-header">
+            <h2 class="news-title">News</h2>
+            <a href="/artikel" class="btn-full">in full &rarr;</a>
+        </div>
+
+        <div class="news-grid">
+            @forelse($berita_terbaru as $news)
+            <a href="#" class="news-card">
+                <div class="news-img-box">
+                    @if($news->foto)
+                        <img src="{{ asset('uploads/' . $news->foto) }}" alt="{{ $news->judul }}">
+                    @else
+                        <div style="width:100%; height:100%; background:#eee; display:flex; align-items:center; justify-content:center; color:#ccc;">No Image</div>
+                    @endif
+                </div>
+
+                <span class="news-label">News</span>
+                <span class="news-text-title">{{ $news->judul }}</span>
+                <span class="news-date">{{ $news->created_at->format('M d, Y') }}</span>
             </a>
+            @empty
+                <div style="grid-column: span 4; text-align: center; padding: 40px; color: #999;">
+                    <p>Belum ada berita terbaru untuk saat ini.</p>
+                </div>
+            @endforelse
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            
-            <div class="group cursor-pointer">
-                <div class="rounded-xl overflow-hidden mb-4 h-40">
-                    <img src="https://via.placeholder.com/400x250" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="News">
-                </div>
-                <h3 class="font-bold text-sm text-slate-900 leading-snug mb-3 group-hover:text-[#441424]">
-                    Boris Tampubolon Nilai Pendapat Bambang Hero dalam Kasus Timah Bukan Keterangan Palsu
-                </h3>
-                <p class="text-[10px] text-gray-500 mb-2 uppercase tracking-tighter">TEMPO.CO, Jakarta - Praktisi hukum dari Dalimunthe & Tampubolon Lawyers...</p>
-               
-            </div>
-
-            <div class="group cursor-pointer">
-                <div class="grid grid-cols-2 gap-1 rounded-xl overflow-hidden mb-4 h-40">
-                    <img src="https://via.placeholder.com/200x250" class="w-full h-full object-cover" alt="News">
-                    <img src="https://via.placeholder.com/200x250" class="w-full h-full object-cover" alt="News">
-                </div>
-                <h3 class="font-bold text-sm text-slate-900 leading-snug mb-3 group-hover:text-[#441424]">
-                    Boris Tampubolon: Guru Supriyani Tak Bisa Dipidana Jika Tak Ada Mens Rea
-                </h3>
-                <p class="text-[10px] text-gray-500 mb-2 uppercase tracking-tighter">TRIBUNNEWS.COM, JAKARTA - Praktisi hukum dan juga pengacara...</p>
-              
-            </div>
-
-            <div class="group cursor-pointer">
-                <div class="rounded-xl overflow-hidden mb-4 h-40">
-                    <img src="https://via.placeholder.com/400x250" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="News">
-                </div>
-                <h3 class="font-bold text-sm text-slate-900 leading-snug mb-3 group-hover:text-[#441424]">
-                    Pakar Hukum Boris: Guru Supriyani Tak Bisa Dipidana
-                </h3>
-                <p class="text-[10px] text-gray-500 mb-2 uppercase tracking-tighter">REPUBLIKA.CO.ID, JAKARTA - Praktisi hukum Boris Tampubolon menjelaskan...</p>
-               
-            </div>
-
-            <div class="group cursor-pointer">
-                <div class="rounded-xl overflow-hidden mb-4 h-40">
-                    <img src="https://via.placeholder.com/400x250" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="News">
-                </div>
-                <h3 class="font-bold text-sm text-slate-900 leading-snug mb-3 group-hover:text-[#441424]">
-                    Pakar Hukum Boris Tampubolon Kritisi Kasus Pembunuhan Vina Cirebon
-                </h3>
-                <p class="text-[10px] text-gray-500 mb-2 uppercase tracking-tighter">tvOnenews.com - Pakar hukum memberikan pandangannya terhadap kasus...</p>
-           
-            </div>
-
-        </div>
     </div>
 </section>

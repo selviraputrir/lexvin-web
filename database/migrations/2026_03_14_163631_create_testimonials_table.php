@@ -9,23 +9,23 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-   public function up(): void
+    public function up(): void
 {
-    Schema::create('contacts', function (Illuminate\Database\Schema\Blueprint $table) {
+    Schema::create('testimonials', function (Blueprint $table) {
         $table->id();
-        $table->string('name');
-        $table->string('email');
-        $table->string('phone_number');
-        $table->text('message');
+        $table->string('nama');
+        $table->string('jabatan');
+        $table->text('pesan');
+        $table->string('foto')->nullable();
         $table->timestamps();
     });
 }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('contacts');
+        Schema::dropIfExists('testimonials');
     }
 };
- 
