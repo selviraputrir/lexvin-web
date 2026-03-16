@@ -70,12 +70,12 @@
                 </div>
             </header>
 
-            <div class="flex-grow flex items-center justify-center text-center px-4">
-                <h1 class="font-serif text-3xl leading-tight text-white drop-shadow-lg md:text-5xl">
-                    PROTECT YOUR BUSINESS<br>SECURE YOUR FUTURE
-                </h1>
-            </div>
-
+           <div class="flex-grow flex items-center justify-center text-center px-4">
+    <h1 class="font-serif text-3xl leading-tight text-white drop-shadow-lg md:text-5xl">
+        <span class="font-bold">PROTECT YOUR BUSINESS</span><br>
+        SECURE YOUR FUTURE
+    </h1>
+</div>
         </div>
 
 
