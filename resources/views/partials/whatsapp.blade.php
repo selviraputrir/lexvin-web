@@ -13,7 +13,7 @@
     <div class="relative group">
         <div class="absolute inset-0 rounded-full bg-gradient-to-b from-[#441425] to-[#2B0C1F] opacity-40 animate-ping"></div>
 
-        <a href="https://wa.me/6287760244895?text=Halo%20Admin,%20saya%20butuh%20bantuan" 
+        <a href="https://wa.me/628138211002?text=Halo%20Admin,%20saya%20butuh%20bantuan" 
            target="_blank"
            class="relative w-14 h-14 bg-gradient-to-b from-[#441425] to-[#2B0C1F] flex items-center justify-center rounded-full shadow-[0_0_20px_rgba(68,20,36,0.4)] hover:shadow-[0_0_30px_rgba(68,20,36,0.6)] hover:bg-[#5a1a30] transition-all duration-300 active:scale-95">
             
