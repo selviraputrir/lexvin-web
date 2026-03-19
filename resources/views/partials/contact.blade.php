@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEXVIN</title>
+    <title>LEXVINLAW</title>
      <link rel="icon" href="{{ asset('images/logo-lexvinlaw.jpeg') }}" type="image/jpeg">
     
     <script src="https://cdn.tailwindcss.com"></script>
