@@ -4,7 +4,7 @@
     <meta name="google-site-verification" content="RKpHBGEEfHIBM0ZgetWez8rYNp4vgzbdr-KDCit7t0U" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEXVINLaw</title>
+    <title>Lexvin Law Firm | Solusi Hukum Bisnis & Perusahaan</title>
     <link rel="icon" href="{{ asset('images/logo-lexvinlaw.jpeg') }}" type="image/jpeg">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
