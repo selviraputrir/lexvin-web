@@ -90,7 +90,7 @@
                             </div>
                             <div>
                                 <h4 class="font-serif font-bold text-white text-[10px] mb-0.5 uppercase tracking-wider">Whatsapp</h4>
-                                <p class="text-[10px] text-gray-400 leading-snug">0877-6024-4895</p>
+                                <p class="text-[10px] text-gray-400 leading-snug">08138211002</p>
                             </div>
                         </a>
 

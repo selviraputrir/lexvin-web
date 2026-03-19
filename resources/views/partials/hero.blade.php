@@ -13,7 +13,7 @@
                     class="bg-black py-4 pl-20 pr-40 [clip-path:polygon(0_0,100%_0,96%_100%,0_100%)] flex items-center z-20">
 
                     <a class="" href="/">
-                        <img src="{{ asset('images/logo.png') }}" alt="LEXVIN" class=" custom-margin-2 h-6 w-[200px]">
+                        <img src="{{ asset('images/logo.png') }}" alt="LEXVINLAW" class=" custom-margin-2 h-6 w-[200px]">
                     </a>
     <nav class="hidden md:flex items-center space-x-8 text-sm font-serif ml-12 text-white whitespace-nowrap">
     <a href="/#home" class="nav-link hover:opacity-80 transition">Home</a>
