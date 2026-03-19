@@ -84,7 +84,7 @@
                             </div>
                         </a>
 
-                        <a href="https://wa.me/628138211002" target="_blank" class="bg-zinc-900/40 p-4 rounded-xl border border-white/5 flex items-start gap-3 hover:border-[#441424]/50 hover:bg-zinc-900/60 transition group">
+                        <a href="https://wa.me/628138211002?text=Halo%20Admin,%20saya%20butuh%20bantuan"  target="_blank" class="bg-zinc-900/40 p-4 rounded-xl border border-white/5 flex items-start gap-3 hover:border-[#441424]/50 hover:bg-zinc-900/60 transition group">
                             <div class="w-9 h-9 bg-gradient-to-br from-[#441424] to-[#701a36] text-white flex items-center justify-center rounded-lg flex-shrink-0 shadow-lg group-hover:scale-105 transition">
                                 <i class="fa-brands fab fa-whatsapp text-sm"></i>
                             </div>
