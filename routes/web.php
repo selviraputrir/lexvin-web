@@ -93,9 +93,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
     // FITUR TESTIMONIAL
     Route::get('/testimonial', function () {
-        // Ambil data testimonial dari database
         $testimonials = \App\Models\Testimonial::orderBy('id', 'desc')->get();
-        // Tampilkan view index testimonial
         return view('admin.testimonial.index', compact('testimonials'));
     })->name('admin.testimonial.index');
 
@@ -117,13 +115,12 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     \App\Models\Testimonial::findOrFail($id)->delete();
     return redirect()->route('admin.testimonial.index');
 })->name('admin.testimonial.destroy');
-// 1. Munculin form edit
+
 Route::get('/testimonial/edit/{id}', function ($id) {
     $testi = \App\Models\Testimonial::findOrFail($id);
     return view('admin.testimonial.edit', compact('testi'));
 })->name('admin.testimonial.edit');
 
-// 2. Proses simpan perubahannya
 Route::post('/testimonial/update/{id}', function (Request $request, $id) {
     $testi = \App\Models\Testimonial::findOrFail($id);
     $testi->update([

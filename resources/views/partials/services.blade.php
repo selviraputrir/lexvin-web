@@ -16,9 +16,9 @@
                             <i class="fa-solid fa-scale-balanced text-lg text-white"></i> 
                         </div>
                     </div>
-                    <h3 class="text-white font-serif font-bold text-sm mb-2 tracking-wide leading-tight">Legal Consultant</h3>
+                    <h3 class="text-white font-serif font-bold text-sm mb-2 tracking-wide leading-tight">Legal Compliance</h3>
                     <p class="text-gray-400 text-[11px] leading-relaxed mb-6 font-light">
-                        Strategic consulting sessions to address business and personal legal needs.
+                        Assistance in mergers, acquisitions, and business separations.
                     </p>
                 </div>
                 <a href="{{ route('detail.legalconsultant') }}" class="bg-[#B89B65] text-black font-bold py-2 px-4 rounded-full text-[9px] uppercase tracking-wider hover:bg-white transition shadow-lg">
