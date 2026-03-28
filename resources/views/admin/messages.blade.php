@@ -12,7 +12,7 @@
             <table class="w-full text-left border-collapse">
                 <thead>
                     <tr class="bg-slate-50/50 border-b border-slate-100">
-                        <th class="px-6 py-5 text-xs uppercase tracking-widest font-black text-slate-400">Pengirim</th>
+                        <th class="px-6 py-5 text-xs uppercase tracking-widest font-black text-slate-400">Nama</th>
                         <th class="px-6 py-5 text-xs uppercase tracking-widest font-black text-slate-400">Kontak</th>
                         <th class="px-6 py-5 text-xs uppercase tracking-widest font-black text-slate-400">Tanggal</th>
                         <th class="px-6 py-5 text-xs uppercase tracking-widest font-black text-slate-400 w-1/3">Pesan</th>
@@ -24,12 +24,7 @@
                     <tr class="hover:bg-slate-50/80 transition-colors group">
                         
                         <td class="px-6 py-5">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-full bg-[#441425]/10 flex items-center justify-center text-[#441425] font-bold">
-                                    {{ substr($msg->nama, 0, 1) }}
-                                </div>
-                                <div class="font-bold text-slate-800">{{ $msg->nama }}</div>
-                            </div>
+                            <div class="font-bold text-slate-800">{{ $msg->nama }}</div>
                         </td>
 
                         <td class="px-6 py-5">
@@ -37,7 +32,7 @@
                                 <i class="bi bi-envelope text-slate-400 mr-2"></i> {{ $msg->email }}
                             </div>
                             <div class="text-xs text-slate-500 mt-1 flex items-center">
-                                <i class="bi bi-telephone text-slate-400 mr-2"></i> {{ $msg->telepon ?? 'Tidak ada no. telp' }}
+                                <i class="bi bi-telephone text-slate-400 mr-2"></i> {{ $msg->telepon ?? '-' }}
                             </div>
                         </td>
 

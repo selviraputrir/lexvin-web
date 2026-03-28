@@ -37,13 +37,12 @@
                     class="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#B89B65] transition-all duration-300 group-hover:w-full"></span>
             </a>
         </div>
-
-        <div class="flex justify-center gap-5 mb-12">
-
+<div class="flex justify-center gap-5 mb-12">
             <a href="https://instagram.com/lexvin.law" target="_blank"
-                class="w-11 h-11 rounded-full bg-zinc-900/50 borderflex items-center justify-centerhover:bg-[#B89B65] hover:text-white hover:border-[#441424] hover:scale-110 transition-all duration-300 shadow-lg">
+                class="w-11 h-11 rounded-full bg-zinc-900/50 border flex items-center justify-center hover:bg-[#B89B65] hover:text-white hover:border-[#441424] hover:scale-110 transition-all duration-300 shadow-lg">
                 <i class="fa-brands fa-instagram text-lg"></i>
             </a>
+            
             <a href="mailto:lexvinlawfirm@gmail.com"
                 class="w-11 h-11 rounded-full bg-zinc-900/50 border flex items-center justify-center hover:bg-[#B89B65] hover:text-white hover:border-[#441424] hover:scale-110 transition-all duration-300 shadow-lg">
                 <i class="fa-solid fa-envelope text-base"></i>
