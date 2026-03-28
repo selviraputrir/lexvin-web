@@ -13,15 +13,17 @@
                     class="bg-black py-4 pl-20 pr-40 [clip-path:polygon(0_0,100%_0,96%_100%,0_100%)] flex items-center z-20">
 
                     <a class="" href="/">
-                        <img src="{{ asset('images/logo.png') }}" alt="LEXVINLAW" class=" custom-margin-2 h-6 w-[200px]">
+                        <img src="{{ asset('images/logo.png') }}" alt="LEXVINLAW"
+                            class=" custom-margin-2 h-6 w-[200px]">
                     </a>
-    <nav class="hidden md:flex items-center space-x-8 text-sm font-serif ml-12 text-white whitespace-nowrap">
-    <a href="/#home" class="nav-link hover:opacity-80 transition">Home</a>
-    <a href="/#about" class="nav-link hover:opacity-80 transition">About</a>
-    <a href="/artikel" class="nav-link hover:opacity-80 transition">Artikel</a>
-    <a href="/#services" class="nav-link hover:opacity-80 transition">Our Services</a> 
-    <a href="/#testimonials" class="nav-link hover:opacity-80 transition">Testimonials</a>
-</nav>
+                    <nav
+                        class="hidden md:flex items-center space-x-8 text-sm font-serif ml-12 text-white whitespace-nowrap">
+                        <a href="/#home" class="nav-link hover:opacity-80 transition">Home</a>
+                        <a href="/#about" class="nav-link hover:opacity-80 transition">About</a>
+                        <a href="/artikel" class="nav-link hover:opacity-80 transition">Artikel</a>
+                        <a href="/#services" class="nav-link hover:opacity-80 transition">Our Services</a>
+                        <a href="/#testimonials" class="nav-link hover:opacity-80 transition">Testimonials</a>
+                    </nav>
                 </div>
 
                 <a href="{{ route('contact.create') }}"
@@ -51,31 +53,34 @@
 
                 <input type="checkbox" id="menu-toggle" class="hidden peer">
 
-                <label for="menu-toggle" class="text-white text-2xl md:hidden z-50 cursor-pointer">
+                <label for="menu-toggle" class="text-white text-2xl md:hidden z-50 cursor-pointer peer-checked:hidden">
                     <i class="fas fa-bars"></i>
                 </label>
-
                 <div id="mobile-menu"
                     class="hidden peer-checked:flex md:hidden absolute top-0 left-0 w-full h-screen bg-white/95 backdrop-blur-sm flex-col items-center justify-center space-y-8 text-xl z-40 shadow-lg">
                     <label for="menu-toggle"
                         class="absolute top-8 right-5 text-gray-900 text-3xl cursor-pointer hover:text-custom-wine">
                         <i class="fas fa-times"></i>
                     </label>
-                    <a href="/home" class="nav-link text-gray-900 hover:text-custom-wine font-serif">Home</a>
-                    <a href="/about" class="nav-link text-gray-900 hover:text-custom-wine font-serif">About</a>
-                    <a href="/services" class="nav-link text-gray-900 hover:text-custom-wine font-serif">OurServices</a>
-                    <a href="/testimonials" class="nav-link text-gray-900 hover:text-custom-wine font-serif">Testimonials</a>
+                    <a href="{{ url('/') }}#home"
+                        class="nav-link text-gray-900 hover:text-custom-wine font-serif">Home</a>
+                    <a href="{{ url('/') }}#about"
+                        class="nav-link text-gray-900 hover:text-custom-wine font-serif">About</a>
+                    <a href="{{ url('/') }}#services"
+                        class="nav-link text-gray-900 hover:text-custom-wine font-serif">Our Services</a>
+                    <a href="{{ url('/') }}#testimonials"
+                        class="nav-link text-gray-900 hover:text-custom-wine font-serif">Testimonials</a>
                     <a href="{{ route('contact.create') }}"
                         class="nav-link text-gray-900 hover:text-custom-wine font-serif font-bold">Contact Us</a>
                 </div>
             </header>
 
-           <div class="flex-grow flex items-center justify-center text-center px-4">
-    <h1 class="font-serif text-3xl leading-tight text-white drop-shadow-lg md:text-5xl">
-        <span class="font-bold">PROTECT YOUR BUSINESS</span><br>
-        SECURE YOUR FUTURE
-    </h1>
-</div>
+            <div class="flex-grow flex items-center justify-center text-center px-4">
+                <h1 class="font-serif text-3xl leading-tight text-white drop-shadow-lg md:text-5xl">
+                    <span class="font-bold">PROTECT YOUR BUSINESS</span><br>
+                    SECURE YOUR FUTURE
+                </h1>
+            </div>
         </div>
 
 

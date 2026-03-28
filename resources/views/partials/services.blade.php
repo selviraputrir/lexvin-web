@@ -1,4 +1,4 @@
-<section class="bg-black py-16">
+<section id="services" class="bg-black py-16">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
             <h2 class="text-2xl font-serif font-bold text-white uppercase tracking-widest relative inline-block">

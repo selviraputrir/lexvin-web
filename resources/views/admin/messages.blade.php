@@ -24,7 +24,7 @@
                     <tr class="hover:bg-slate-50/80 transition-colors group">
                         
                         <td class="px-6 py-5">
-                            <div class="font-bold text-slate-800">{{ $msg->nama }}</div>
+                            <div class="font-bold text-slate-800">{{ $msg->name }}</div>
                         </td>
 
                         <td class="px-6 py-5">
@@ -32,7 +32,7 @@
                                 <i class="bi bi-envelope text-slate-400 mr-2"></i> {{ $msg->email }}
                             </div>
                             <div class="text-xs text-slate-500 mt-1 flex items-center">
-                                <i class="bi bi-telephone text-slate-400 mr-2"></i> {{ $msg->telepon ?? '-' }}
+                                <i class="bi bi-telephone text-slate-400 mr-2"></i> {{ $msg->phone_number ?? '-' }}
                             </div>
                         </td>
 
@@ -42,8 +42,8 @@
                         </td>
 
                         <td class="px-6 py-5">
-                            <div class="text-sm text-slate-500 italic line-clamp-3" title="{{ $msg->pesan }}">
-                                "{{ $msg->pesan }}"
+                            <div class="text-sm text-slate-500 italic line-clamp-3" title="{{ $msg->message }}">
+                                "{{ $msg->message }}"
                             </div>
                         </td>
 
