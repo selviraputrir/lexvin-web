@@ -36,13 +36,12 @@
                                 <a href="{{ route('admin.testimonial.edit', $item->id) }}" class="text-blue-500 hover:bg-blue-50 p-2 rounded-lg transition">
                                     <i class="bi bi-pencil-square text-lg"></i>
                                 </a>
-                                <form action="{{ route('admin.testimonial.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus?')">
-                                    @propto('delete')
-                                    @csrf
-                                    <button type="submit" class="text-red-500 hover:bg-red-50 p-2 rounded-lg transition">
-                                        <i class="bi bi-trash text-lg"></i>
-                                    </button>
-                                </form>
+                               <form action="{{ route('admin.testimonial.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus?')">
+    @method('delete') @csrf
+    <button type="submit" class="text-red-500 hover:bg-red-50 p-2 rounded-lg transition">
+        <i class="bi bi-trash text-lg"></i>
+    </button>
+</form>
                             </div>
                         </td>
                     </tr>
