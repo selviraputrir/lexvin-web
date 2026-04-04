@@ -36,7 +36,7 @@
                         <div
                             class="grid grid-cols-1 divide-y divide-white/20 text-center text-white md:grid-cols-3 md:divide-x md:divide-y-0">
                             <div class="py-6 md:py-0">
-                                <p class="text-3xl md:text-4xl font-bold">5000+</p>
+                                <p class="text-3xl md:text-4xl font-bold">750+</p>
                                 <p class="mt-1 text-base text-gray-200">Cases Handled</p>
                             </div>
                             <div class="py-6 md:py-0">
